@@ -5,16 +5,23 @@ const variantStyles = {
     primary: 'f5 button link dim br3 ph3 pv2 dib white bg-primary-1',
     secondary: 'f5 button link dim br3 ph3 pv2 dib black bg-accent',
     disabled: 'f5 button br3 dim ph3 pv2 dib gray bg-light-gray disabled',
-    minimal: 'f5 button link shadow-hover br3 ph3 pv2 dib black bg-transparent',
-    outline: 'f5 button link shadow-hover dim br3 ph3 ba pv2 dib black bg-transparent b--black',
-    "primary-outline": "f5 button link shadow-hover dim br3 ph3 ba pv2 dib primary-1 bg-transparent b--primary-1",
+    minimal: 'f5 button link dim br3 ph3 pv2 dib black bg-transparent',
+    outline: 'f5 button link dim br3 ph3 ba pv2 dib black bg-transparent b--black',
+    "primary-outline": "f5 button link dim br3 ph3 ba pv2 dib primary-1 bg-transparent b--primary-1",
 }
 ---
 <style>
     .disabled {
         pointer-events: none;
     }
+
+    /* .shadow-hover-1 {
+        cursor:pointer;
+    }
+    .shadow-hover:focus:after,.shadow-hover:hover:after{opacity:1}
+    .shadow-hover-1{position:relative;transition:all .5s cubic-bezier(.165,.84,.44,1)}
+    .shadow-hover-1:after{content:"";box-shadow:0 0 .5rem 2px rgba(0,0,0,.2);border-radius:inherit;opacity:0;position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1;transition:opacity .5s cubic-bezier(.165,.84,.44,1);} */
 </style>
-<a class={variantStyles[variant]} {...Astro.props}>{title}</a>
+<a class={variantStyles[variant] + ' ' + Astro.props.class} {...Astro.props} >{title}</a>
 
 
