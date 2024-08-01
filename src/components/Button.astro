@@ -5,9 +5,9 @@ const variantStyles = {
     primary: 'f5 button link dim br3 ph3 pv2 dib white bg-primary-1',
     secondary: 'f5 button link dim br3 ph3 pv2 dib black bg-accent',
     disabled: 'f5 button br3 dim ph3 pv2 dib gray bg-light-gray disabled',
-    minimal: 'f5 button link shadow-hover br3 ph3 pv2 dib black bg-transparent',
-    outline: 'f5 button link shadow-hover dim br3 ph3 ba pv2 dib black bg-transparent b--black',
-    "primary-outline": "f5 button link shadow-hover dim br3 ph3 ba pv2 dib primary-1 bg-transparent b--primary-1",
+    minimal: 'f5 button link dim br3 ph3 pv2 dib black bg-transparent',
+    outline: 'f5 button link dim br3 ph3 ba pv2 dib black bg-transparent b--black',
+    "primary-outline": "f5 button link dim br3 ph3 ba pv2 dib primary-1 bg-transparent b--primary-1",
 }
 ---
 <style>
@@ -15,6 +15,6 @@ const variantStyles = {
         pointer-events: none;
     }
 </style>
-<a class={variantStyles[variant]} {...Astro.props}>{title}</a>
+<a class={variantStyles[variant] + ' ' + Astro.props.class} {...Astro.props} >{title}</a>
 
 
