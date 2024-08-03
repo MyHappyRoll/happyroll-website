@@ -1,0 +1,35 @@
+---
+import Button from "../Button.astro";
+
+---
+
+<style>
+    .hero {
+        margin-top: -6rem;
+        padding: 10rem 0 5rem;
+    }
+
+    .hero__inner-wrapper {
+        width: 100%;
+        max-width: 64rem;
+        margin: auto;
+        padding: 1rem;
+    }
+</style>
+<section class="w100 hero bg-light-gray">
+    <div class="hero__inner-wrapper flex">
+        <div class="w-two-thirds">
+            <h2>
+                2x the revenue of your sushi restaurant, or <br/>your marketing is free.
+            </h2>
+            <p>
+                HappyRoll is the only marketing tool designed to attract new diners, increase repeat visits, and reward loyal customers for your sushi restaurant.
+            </p>
+            <Button variant="primary" title="Book a call" />
+            <Button variant="minimal" title="See pricing" />
+        </div>
+        <div class="w-third">
+            Animation here...
+        </div>
+    </div>
+</section>
