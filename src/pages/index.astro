@@ -4,6 +4,7 @@ import Button from '../components/Button.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Hero from '../components/sections/Hero.astro';
 ---
 
 <!doctype html>
@@ -13,6 +14,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body>
 		<Header />
+		<Hero />
 		<main>
 			<p class="f2">Buttons</p>
 			<Button title="Primary" variant="primary" /><br /><br />

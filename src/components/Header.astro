@@ -10,10 +10,10 @@ import HLogo from '../images/h_logo.svg'
         position: sticky;
         top: -1px; /* trick the observer into seeing a viewport intersection */
         transition: all 200ms ease-in-out;
+        z-index: 10;
     }
 
     .is-stuck {
-        z-index: 10;
         width: 100%;
         max-width: 100%;
         border-radius: 0;
@@ -56,6 +56,24 @@ import HLogo from '../images/h_logo.svg'
 
     .is-stuck .brand__happyroll {
         width: 0;
+    }
+
+    @media screen and (max-width: 64rem) {
+        .header {
+            position: fixed;
+            top: 0;
+            margin: 0;
+            width: 100%;
+            border-radius: 0;
+        }
+
+        .brand__happyroll {
+            width: 0;
+        }
+
+        .brand__logo {
+            display: inline-block;
+        }
     }
 </style>
 
