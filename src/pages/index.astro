@@ -1,51 +1,37 @@
 ---
-<<<<<<< HEAD
 import BaseHead from "../components/BaseHead.astro";
+import Button from "../components/Button.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-=======
-import BaseHead from '../components/BaseHead.astro';
-import Button from '../components/Button.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import Hero from '../components/sections/Hero.astro';
->>>>>>> f4802d29ca91875ee5697508619a6825d7b44ac7
+import Hero from "../components/sections/Hero.astro";
 ---
 
 <!doctype html>
 <html lang="en">
-<<<<<<< HEAD
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body></body>
-=======
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<Hero />
-		<main>
-			<p class="f2">Buttons</p>
-			<Button title="Primary" variant="primary" /><br /><br />
-			<Button title="Secondary" variant="secondary" /><br /><br />
-			<Button title="Disabled" variant="disabled" /><br /><br />
-			<Button title="Minimal" variant="minimal" /><br /><br />
-			<Button title="Outline" variant="outline" /><br /><br />
-			<Button title="Primary Outline" variant="primary-outline" /><br /><br />
+  <body>
+    <Header />
+    <Hero />
+    <main>
+      <p class="f2">Buttons</p>
+      <Button title="Primary" variant="primary" /><br /><br />
+      <Button title="Secondary" variant="secondary" /><br /><br />
+      <Button title="Disabled" variant="disabled" /><br /><br />
+      <Button title="Minimal" variant="minimal" /><br /><br />
+      <Button title="Outline" variant="outline" /><br /><br />
+      <Button title="Primary Outline" variant="primary-outline" /><br /><br />
 
-			<!-- These are just here to make the page long, remove at-will -->
-			<Button title="Primary" variant="primary" /><br /><br />
-			<Button title="Secondary" variant="secondary" /><br /><br />
-			<Button title="Disabled" variant="disabled" /><br /><br />
-			<Button title="Minimal" variant="minimal" /><br /><br />
-			<Button title="Outline" variant="outline" /><br /><br />
-			<Button title="Primary Outline" variant="primary-outline" /><br /><br />
-		</main>
-		<Footer />
-	</body>
->>>>>>> f4802d29ca91875ee5697508619a6825d7b44ac7
+      <!-- These are just here to make the page long, remove at-will -->
+      <Button title="Primary" variant="primary" /><br /><br />
+      <Button title="Secondary" variant="secondary" /><br /><br />
+      <Button title="Disabled" variant="disabled" /><br /><br />
+      <Button title="Minimal" variant="minimal" /><br /><br />
+      <Button title="Outline" variant="outline" /><br /><br />
+      <Button title="Primary Outline" variant="primary-outline" /><br /><br />
+    </main>
+    <Footer />
+  </body>
 </html>
