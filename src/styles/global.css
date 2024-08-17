@@ -1,17 +1,301 @@
-/*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
-
+/* Adding in colors from Palette 11 in Refactoring UI */
 :root {
-  --primary-1: #cb005f;
-  /*
+  /* Primary: These are the splashes of color that should appear the most in your UI,
+and are the ones that determine the overall "look" of the site. Use these
+for things like primary actions, links, navigation items, icons, accent
+borders, or text you want to emphasize. */
+
+  /* Our only primary brand color is Pink as defined below */
+  --primary-100: #ffe3ec;
+  --primary-200: #ffb8d2;
+  --primary-300: #ff8cba;
+  --primary-400: #f364a2;
+  --primary-500: #e8368f;
+  --primary-600: #da127d; /* This is our main brand color for the logo and CTAs  */
+  --primary-700: #bc0a6f;
+  --primary-800: #a30664;
+  --primary-900: #870557;
+  --primary-1000: #620042;
+
+  /* Neutrals: These are the colors you will use the most and will make up the majority
+of your UI. Use them for most of your text, backgrounds, and borders,
+as well as for things like secondary buttons and links. */
+
+  /* Our only neutral color is Cool Grey as defined below */
+  --neutral-100: #f5f7fa; /* Color used as hero section background color on homepage*/
+  --neutral-200: #e4e7eb;
+  --neutral-300: #cbd2d9;
+  --neutral-400: #9aa5b1;
+  --neutral-500: #7b8794;
+  --neutral-600: #616e7c;
+  --neutral-700: #52606d;
+  --neutral-800: #3e4c59; /* Color used for header navigation links, primary button border color, secondary button background, and heading text color */
+  --neutral-900: #323f4b;
+  --neutral-1000: #1f2933;
+
+  --accent: #f7c948;
+}
+
+/* --- COLORS --- */
+
+/* Primary Colors */
+.primary-100 {
+  color: var(--primary-100);
+}
+
+.primary-200 {
+  color: var(--primary-200);
+}
+
+.primary-300 {
+  color: var(--primary-300);
+}
+
+.primary-400 {
+  color: var(--primary-400);
+}
+
+.primary-500 {
+  color: var(--primary-500);
+}
+
+.primary-600 {
+  color: var(--primary-600);
+}
+
+.primary-700 {
+  color: var(--primary-700);
+}
+
+.primary-800 {
+  color: var(--primary-800);
+}
+
+.primary-900 {
+  color: var(--primary-900);
+}
+
+.primary-1000 {
+  color: var(--primary-1000);
+}
+
+/* Neutral Colors */
+.neutral-100 {
+  color: var(--neutral-100);
+}
+
+.neutral-200 {
+  color: var(--neutral-200);
+}
+
+.neutral-300 {
+  color: var(--neutral-300);
+}
+
+.neutral-400 {
+  color: var(--neutral-400);
+}
+
+.neutral-500 {
+  color: var(--neutral-500);
+}
+
+.neutral-600 {
+  color: var(--neutral-600);
+}
+
+.neutral-700 {
+  color: var(--neutral-700);
+}
+
+.neutral-800 {
+  color: var(--neutral-800);
+}
+
+.neutral-900 {
+  color: var(--neutral-900);
+}
+
+.neutral-1000 {
+  color: var(--neutral-1000);
+}
+
+/* --- BACKGROUND COLORS --- */
+
+/* Primary Background Colors */
+.bg-primary-100 {
+  background-color: var(--primary-100);
+}
+
+.bg-primary-200 {
+  background-color: var(--primary-200);
+}
+
+.bg-primary-300 {
+  background-color: var(--primary-300);
+}
+
+.bg-primary-400 {
+  background-color: var(--primary-400);
+}
+
+.bg-primary-500 {
+  background-color: var(--primary-500);
+}
+
+.bg-primary-600 {
+  background-color: var(--primary-600);
+}
+
+.bg-primary-700 {
+  background-color: var(--primary-700);
+}
+
+.bg-primary-800 {
+  background-color: var(--primary-800);
+}
+
+.bg-primary-900 {
+  background-color: var(--primary-900);
+}
+
+.bg-primary-1000 {
+  background-color: var(--primary-1000);
+}
+
+/* Neutral Background Colors */
+.bg-neutral-100 {
+  background-color: var(--neutral-100);
+}
+
+.bg-neutral-200 {
+  background-color: var(--neutral-200);
+}
+
+.bg-neutral-300 {
+  background-color: var(--neutral-300);
+}
+
+.bg-neutral-400 {
+  background-color: var(--neutral-400);
+}
+
+.bg-neutral-500 {
+  background-color: var(--neutral-500);
+}
+
+.bg-neutral-600 {
+  background-color: var(--neutral-600);
+}
+
+.bg-neutral-700 {
+  background-color: var(--neutral-700);
+}
+
+.bg-neutral-800 {
+  background-color: var(--neutral-800);
+}
+
+.bg-neutral-900 {
+  background-color: var(--neutral-900);
+}
+
+.bg-neutral-1000 {
+  background-color: var(--neutral-1000);
+}
+
+/* --- BORDER COLORS --- */
+
+/* Primary Border Colors */
+.b--primary-100 {
+  border-color: var(--primary-100);
+}
+
+.b--primary-200 {
+  border-color: var(--primary-200);
+}
+
+.b--primary-300 {
+  border-color: var(--primary-300);
+}
+
+.b--primary-400 {
+  border-color: var(--primary-400);
+}
+
+.b--primary-500 {
+  border-color: var(--primary-500);
+}
+
+.b--primary-600 {
+  border-color: var(--primary-600);
+}
+
+.b--primary-700 {
+  border-color: var(--primary-700);
+}
+
+.b--primary-800 {
+  border-color: var(--primary-800);
+}
+
+.b--primary-900 {
+  border-color: var(--primary-900);
+}
+
+.b--primary-1000 {
+  border-color: var(--primary-1000);
+}
+
+/* Neutral Border Colors */
+.b--neutral-100 {
+  border-color: var(--neutral-100);
+}
+
+.b--neutral-200 {
+  border-color: var(--neutral-200);
+}
+
+.b--neutral-300 {
+  border-color: var(--neutral-300);
+}
+
+.b--neutral-400 {
+  border-color: var(--neutral-400);
+}
+
+.b--neutral-500 {
+  border-color: var(--neutral-500);
+}
+
+.b--neutral-600 {
+  border-color: var(--neutral-600);
+}
+
+.b--neutral-700 {
+  border-color: var(--neutral-700);
+}
+
+.b--neutral-800 {
+  border-color: var(--neutral-800);
+}
+
+.b--neutral-900 {
+  border-color: var(--neutral-900);
+}
+
+.b--neutral-1000 {
+  border-color: var(--neutral-1000);
+}
+
+/* :root { */
+/* --primary-1: #cb005f; */
+/*
 	--primary-2: 
 	--primary-3:
 	...etc for shades
 	*/
-  --accent: #f7c948;
+/* --accent: #f7c948;
   --accent-dark: #745606;
   --black: 15, 18, 25;
   --gray: 96, 115, 159;
@@ -19,13 +303,13 @@
   --gray-dark: 34, 41, 57;
   --gray-gradient: rgba(var(--gray-light), 50%), #fff;
   --box-shadow: 0 2px 6px rgba(var(--gray), 25%),
-    0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
-}
+    0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%); */
+/* } */
 
 /*
 * Some missing color classes
 */
-.bg-primary-1 {
+/* .bg-primary-1 {
   background-color: var(--primary-1);
 }
 
@@ -51,7 +335,7 @@
 
 .bg-accent-dark {
   background-color: var(--accent-dark);
-}
+} */
 
 /* @Kyler: What was this class intended for? */
 .sr-only {
