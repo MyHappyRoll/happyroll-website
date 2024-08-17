@@ -1,113 +1,128 @@
 ---
-import Button from './Button.astro';
-import HLogo from '../images/h_logo.svg'
+import Button from "./Button.astro";
+import HLogo from "../images/h_logo.svg";
 ---
+
 <style>
+  .header {
+    margin: calc(1em + 1px) auto 0; /* visually compensate for the trick */
+    height: 75px;
+    position: sticky;
+    top: -1px; /* trick the observer into seeing a viewport intersection */
+    transition: all 200ms ease-in-out;
+    z-index: 10;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  }
+
+  .is-stuck {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+  }
+
+  .header__inner-wrapper {
+    max-width: 64rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .brand {
+    text-decoration: none;
+    color: var(--primary-1);
+    display: flex;
+    align-items: center;
+  }
+
+  .brand:hover {
+    color: var(--primary-1);
+  }
+
+  .brand__logo {
+    height: 3rem;
+  }
+
+  .is-stuck .brand__logo {
+    display: inline-block;
+  }
+
+  .brand__happyroll {
+    font-family: "Nunito Variable", sans-serif;
+    font-weight: 900;
+    width: 7rem;
+    transition: width 200ms ease-in-out;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .is-stuck .brand__happyroll {
+    width: 0;
+  }
+
+  @media screen and (max-width: 64rem) {
     .header {
-        max-width: 64rem;
-        margin: calc(1em + 1px) auto 0; /* visually compensate for the trick */
-        padding: 1rem;
-        position: sticky;
-        top: -1px; /* trick the observer into seeing a viewport intersection */
-        transition: all 200ms ease-in-out;
-        z-index: 10;
-    }
-
-    .is-stuck {
-        width: 100%;
-        max-width: 100%;
-        border-radius: 0;
-    }
-
-    .header__inner-wrapper {
-        max-width: 64rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0 auto;
-    }
-
-    .brand {
-        text-decoration: none;
-        color: var(--primary-1);
-        display: flex;
-        align-items: center;
-    }
-
-    .brand:hover {
-        color: var(--primary-1);
-    }
-
-    .brand__logo {
-        height: 2.675rem;
-        margin-right: .2rem;
-    }
-
-    .is-stuck .brand__logo {
-        display: inline-block;
+      position: fixed;
+      top: 0;
+      margin: 0;
+      width: 100%;
+      border-radius: 0;
     }
 
     .brand__happyroll {
-        width: 6.25rem;
-        transition: width 200ms ease-in-out;
-        overflow: hidden;
-        white-space: nowrap;
+      width: 0;
     }
 
-    .is-stuck .brand__happyroll {
-        width: 0;
+    .brand__logo {
+      display: inline-block;
     }
-
-    @media screen and (max-width: 64rem) {
-        .header {
-            position: fixed;
-            top: 0;
-            margin: 0;
-            width: 100%;
-            border-radius: 0;
-        }
-
-        .brand__happyroll {
-            width: 0;
-        }
-
-        .brand__logo {
-            display: inline-block;
-        }
-    }
+  }
 </style>
 
-<header id="site-header" class="bg-white br3 header shadow-1-ns">
-    <div class="header__inner-wrapper">
-        <!-- Left -->
-        <a class="brand grow" href="#">
-            <img class="brand__logo" src={HLogo.src} alt="HappyRoll"/>
-            <span class="brand__happyroll">appy<strong>roll.</strong></span>
-        </a>
-        <!-- Middle -->
-        <nav>
-            <Button href="/gallery" variant="minimal" title="Gallery"/>
-            <Button href="/pricing" variant="minimal" title="Pricing"/>
-            <Button href="/about" variant="minimal" title="About"/>
-            <Button href="/blog" variant="minimal" title="Blog"/>
-        </nav>
-        <!-- Right -->
-        <div>
-            <Button class="tr" variant="primary" href="#" title="Book a call"/>
-        </div>
+<header
+  id="site-header"
+  class="bg-white br5 header mw8 center pv2 ph4 flex items-center"
+>
+  <div class="header__inner-wrapper w-100">
+    <!-- Left -->
+    <div class="w-20">
+      <a class="brand grow" href="#">
+        <img class="brand__logo" src={HLogo.src} alt="HappyRoll" />
+        <span class="brand__happyroll pl2 f4">HappyRoll</span>
+      </a>
     </div>
+    <!-- Middle -->
+    <div class="w-60 flex justify-center">
+      <nav>
+        <Button href="/pricing" variant="minimal" title="Pricing" />
+        <Button href="/about" variant="minimal" title="About" />
+        <Button href="/gallery" variant="minimal" title="Gallery" />
+        <Button href="/blog" variant="minimal" title="Blog" />
+      </nav>
+    </div>
+    <!-- Right -->
+    <div class="w-20 flex justify-end">
+      <div>
+        <Button class="tr" variant="primary" href="#" title="Book a call" />
+      </div>
+    </div>
+  </div>
 </header>
 
 <script>
-    const header = document.getElementById('site-header');
-    if (header) {
-        const observer = new IntersectionObserver(([e]) => {
-            e.target.classList.toggle('is-stuck', 
-                // is intersecting the top but not the left or right
-                e.boundingClientRect.width <= e.intersectionRect.width &&
-                e.intersectionRatio < 1
-            )
-        }, {threshold: 1})
-        observer.observe(header)
-    }
+  const header = document.getElementById("site-header");
+  if (header) {
+    const observer = new IntersectionObserver(
+      ([e]) => {
+        e.target.classList.toggle(
+          "is-stuck",
+          // is intersecting the top but not the left or right
+          e.boundingClientRect.width <= e.intersectionRect.width &&
+            e.intersectionRatio < 1
+        );
+      },
+      { threshold: 1 }
+    );
+    observer.observe(header);
+  }
 </script>
