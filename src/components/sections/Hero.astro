@@ -74,7 +74,7 @@ import MakiAnimation from "../../videos/maki_anim.mp4";
           "makiAnimation"
         ) as HTMLVideoElement;
 
-        anim?.addEventListener("loadedmetadata", () => {
+        anim?.addEventListener("loadeddata", () => {
           if (!anim) return;
           anim.playbackRate = 0.25;
         });
