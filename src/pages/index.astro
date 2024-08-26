@@ -5,6 +5,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Hero from "../components/sections/Hero.astro";
+import ProblemSolution from "../components/sections/ProblemSolution.astro";
 ---
 
 <!doctype html>
@@ -14,7 +15,11 @@ import Hero from "../components/sections/Hero.astro";
   </head>
   <body>
     <Header />
-    <Hero />
+	<div class="section-container flex flex-column">
+		<Hero />
+		<ProblemSolution />
+	</div>
+    
     <main class="mw6 center flex justify-center tc">
       <div class="vh-100">
         <p class="f2">Buttons</p>

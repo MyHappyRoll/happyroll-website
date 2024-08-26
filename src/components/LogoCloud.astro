@@ -1,0 +1,116 @@
+---
+import ChowNow from '../images/thirdparty/chownow.png';
+import G from '../images/thirdparty/g.png';
+import TripAdvisor from '../images/thirdparty/tripadvisor.svg';
+import Insta from '../images/thirdparty/insta.png';
+import Fb from '../images/thirdparty/fb.png';
+import DoorDash from '../images/thirdparty/doordash.svg';
+import OpenTable from '../images/thirdparty/opentable.svg';
+import Toast from '../images/thirdparty/toast.png';
+import Yelp from '../images/thirdparty/yelp.png';
+
+const logos = [
+    ChowNow,
+    G,
+    TripAdvisor,
+    Insta,
+    Fb,
+    DoorDash,
+    OpenTable,
+    Toast,
+    Yelp
+]
+---
+
+<style>
+    .logo-cloud {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        z-index: -1;
+    }
+
+    .cloud-item {
+        position: absolute;
+        top: 100%;
+        animation-name: scrolling;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    @keyframes scrolling {
+        100% {transform: translateY(-500px);}
+    }
+</style>
+
+<div class="logo-cloud js-logo-cloud fw">
+    {logos.map((logo) => <img src={logo.src} class={`cloud-item`} width="50" height="50" />)}
+</div>
+
+<script>
+
+    (function(logoCloudEl: Element | null) {
+
+        const ANIM_BASE_DURATION_MS = 5000;
+        const ITEM_WIDTH = 50;
+        const ANIM_DURATION_MULTIPLIER = 1.25
+
+        if (!logoCloudEl) {
+            return;
+        }
+        
+        const cloudItems = logoCloudEl?.children
+        if (!cloudItems?.length) {
+            return;
+        }
+
+        /**
+         * We check against these so logos don't overlap
+         */
+        const savedPositions = [];
+
+        /**
+         * Get a random x-coordinate within a rect
+         * @param HTMLElement containerElement
+         */
+        const getRandomX = (containerElement: Element): number => {
+            const rect = containerElement.getBoundingClientRect();
+            const x = rect.x;
+            const width = rect.width;
+
+            return Math.random() * (width - x) + x
+        }
+
+        /* :D */
+        const intersectsPosition = (x: number) => {
+            return savedPositions.reduce((acc, savedX) => {
+                const intercepts = Number(
+                    // x intercepts an element
+                    (x > savedX && x < savedX + ITEM_WIDTH) ||
+                    // x + width intercepts an element
+                    (x + ITEM_WIDTH > savedX && x + ITEM_WIDTH < savedX + ITEM_WIDTH)
+                )
+                return acc + intercepts
+            }, 0) > 0
+        }
+
+        Array.from(cloudItems).forEach(function placeItem(item: HTMLElement) {
+            const x = getRandomX(logoCloudEl)
+            const delay = Math.random() * ANIM_BASE_DURATION_MS;
+            const duration = Math.random() * (ANIM_BASE_DURATION_MS) + ANIM_BASE_DURATION_MS / ANIM_DURATION_MULTIPLIER;
+
+            // ensure the position doesn't intersect with another
+            if (intersectsPosition(x)) {
+                // if it does, recalculate
+                return placeItem(item);
+            }
+
+            savedPositions.push(x)
+            item.style.left = `${x}px`;
+            item.style.animationDuration = `${duration}ms`;
+            item.style.animationDelay = `${delay}ms`
+        })
+    })(document.querySelector('.js-logo-cloud'))
+    
+</script>
