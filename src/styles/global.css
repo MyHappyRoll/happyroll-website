@@ -22,6 +22,7 @@ of your UI. Use them for most of your text, backgrounds, and borders,
 as well as for things like secondary buttons and links. */
 
   /* Our only neutral color is Cool Grey as defined below */
+  --white: #f5f7fa; 
   --neutral-100: #f5f7fa; /* Color used as hero section background color on homepage*/
   --neutral-200: #e4e7eb;
   --neutral-300: #cbd2d9;
@@ -32,6 +33,7 @@ as well as for things like secondary buttons and links. */
   --neutral-800: #3e4c59; /* Color used for header navigation links, primary button border color, secondary button background, and heading text color */
   --neutral-900: #323f4b;
   --neutral-1000: #1f2933;
+  --black: #1f2933;
 
   --accent: #f7c948;
 }
@@ -286,74 +288,6 @@ as well as for things like secondary buttons and links. */
 
 .b--neutral-1000 {
   border-color: var(--neutral-1000);
-}
-
-/* :root { */
-/* --primary-1: #cb005f; */
-/*
-	--primary-2: 
-	--primary-3:
-	...etc for shades
-	*/
-/* --accent: #f7c948;
-  --accent-dark: #745606;
-  --black: 15, 18, 25;
-  --gray: 96, 115, 159;
-  --gray-light: 229, 233, 240;
-  --gray-dark: 34, 41, 57;
-  --gray-gradient: rgba(var(--gray-light), 50%), #fff;
-  --box-shadow: 0 2px 6px rgba(var(--gray), 25%),
-    0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%); */
-/* } */
-
-/*
-* Some missing color classes
-*/
-/* .bg-primary-1 {
-  background-color: var(--primary-1);
-}
-
-.primary-1 {
-  color: var(--primary-1);
-}
-
-.b--primary-1 {
-  border-color: var(--primary-1);
-}
-
-.accent-dark {
-  color: var(--accent-dark);
-}
-
-.bg-accent {
-  background-color: var(--accent);
-}
-
-.b--accent {
-  border-color: var(--accent);
-}
-
-.bg-accent-dark {
-  background-color: var(--accent-dark);
-} */
-
-/* @Kyler: What was this class intended for? */
-.sr-only {
-  border: 0;
-  padding: 0;
-  margin: 0;
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-  clip: rect(1px 1px 1px 1px);
-  /* maybe deprecated but we need to support legacy browsers */
-  clip: rect(1px, 1px, 1px, 1px);
-  /* modern browsers, clip-path works inwards from each corner */
-  clip-path: inset(50%);
-  /* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
-  white-space: nowrap;
 }
 
 /* Custom CSS */
