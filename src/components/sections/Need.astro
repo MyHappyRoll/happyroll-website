@@ -1,0 +1,59 @@
+---
+import LogoCloud from "../LogoCloud.astro";
+import { Icon } from 'astro-icon/components'
+---
+<style>
+    .list-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        line-clamp: 2;
+    }
+
+    .check {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: var(--neutral-700);
+        display: inline-block;
+        vertical-align: middle;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: none;
+    }
+
+    [data-icon="check"] {
+        display: inline-block;
+        color: var(--white);
+        /* transform: scale(2) */
+    }
+</style>
+<section class="relative fw">
+    <LogoCloud />
+    <div class="center mw6 bg-white-70 pv5 ph2">
+        <h3 class="f2 tc">So many tools and apps make marketing your sushi restaurant overwhelming.</h2>
+        <p class="tc">From posting pics on Instagram to responding to customer reviews &dash; you do a lot to keep your sushi restaurant running.</p>
+    </div>
+</section>
+
+<section class="bg-light-gray bb b--gray">
+    <ul class="m0 p0 flex center list">
+        <li class="list-item ph2 pv3 br b--gray">
+            <span class="check mr2"><Icon size="13" name="check" />
+            </span>Get found by more customers near you.
+        </li>
+        <li class="list-item ph2 pv3 br b--gray">
+            <span class="check mr2"><Icon size="13" name="check" />
+            </span>Save thousands on your marketing.
+        </li>
+        <li class="list-item ph2 pv3 br b--gray">
+            <span class="check mr2"><Icon size="13" name="check" />
+            </span>Specially designed for sushi restaurants.
+        </li>
+        <li class="list-item ph2 pv3">
+            <span class="check mr2"><Icon size="13" name="check" />
+            </span>Service backed by results guarantee.
+        </li>
+    </ul>
+</section>
