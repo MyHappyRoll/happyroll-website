@@ -5,7 +5,9 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Hero from "../components/sections/Hero.astro";
-import ProblemSolution from "../components/sections/ProblemSolution.astro";
+import Need from "../components/sections/Need.astro";
+import BenefitsTeaser from "../components/sections/BenefitsTeaser.astro";
+import FeaturesBenefits from "../components/sections/FeaturesBenefits.astro";
 ---
 
 <!doctype html>
@@ -17,7 +19,9 @@ import ProblemSolution from "../components/sections/ProblemSolution.astro";
     <Header />
 	<div class="section-container flex flex-column">
 		<Hero />
-		<ProblemSolution />
+		<Need />
+		<BenefitsTeaser />
+		<FeaturesBenefits />
 	</div>
     
     <main class="mw6 center flex justify-center tc">
