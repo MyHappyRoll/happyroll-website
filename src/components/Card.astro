@@ -1,0 +1,21 @@
+---
+const getContentClass = () => {
+    if (!Astro.slots.has('left')) {
+        return []
+    }
+
+    return ['w-two-thirds'];
+}
+---
+<div class="br4 ph4 pv4 bg-white flex">
+    { Astro.slots.has('left') ? 
+        <div class="w-third">
+            <slot name="left" />
+        </div>
+        : null
+    }
+    <div class:list={getContentClass()}>
+        <p class="f4 b">{Astro.props.title}</p>
+        <p>{Astro.props.description}</p>
+    </div>
+</div>
