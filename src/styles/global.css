@@ -22,7 +22,7 @@ of your UI. Use them for most of your text, backgrounds, and borders,
 as well as for things like secondary buttons and links. */
 
   /* Our only neutral color is Cool Grey as defined below */
-  --white: #f5f7fa; 
+  --white: #ffffff;
   --neutral-100: #f5f7fa; /* Color used as hero section background color on homepage*/
   --neutral-200: #e4e7eb;
   --neutral-300: #cbd2d9;
