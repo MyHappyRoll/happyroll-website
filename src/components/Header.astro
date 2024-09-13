@@ -12,13 +12,14 @@ import HRLogoFull from "../images/hr_logo_full.svg";
     top: -1px; /* trick the observer into seeing a viewport intersection */
     transition: all 200ms ease-in-out;
     z-index: 10;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   }
 
   .is-stuck {
     width: 100%;
     max-width: 100%;
     border-radius: 0;
+    background-color: var(--white);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   }
 
   .header__inner-wrapper {
@@ -73,6 +74,8 @@ import HRLogoFull from "../images/hr_logo_full.svg";
       margin: 0;
       width: 100%;
       border-radius: 0;
+      background-color: var(--white);
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     }
 
     .brand__happyroll {
@@ -87,7 +90,7 @@ import HRLogoFull from "../images/hr_logo_full.svg";
 
 <header
   id="site-header"
-  class="bg-white br5 header mw8 center pv2 ph2 ph4-ns flex items-center relative"
+  class="header mw8 center pv2 ph2 ph4-ns flex items-center relative"
 >
   <div class="header__inner-wrapper w-100">
     <!-- Left -->
@@ -136,7 +139,7 @@ import HRLogoFull from "../images/hr_logo_full.svg";
       <div class="dn-l">
         <Button id="menuButton" variant="primary-outline" title="Menu" />
       </div>
-      <div class="dn db-l">
+      <div class="dn db-l white">
         <Button variant="primary" href="#" title="Book a call" />
       </div>
     </div>
