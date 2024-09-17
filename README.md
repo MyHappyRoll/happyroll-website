@@ -1,68 +1,38 @@
-# Astro Starter Kit: Blog
+![HappyRoll Smiling H logo](/public/images/final-logo-pink.svg)
 
-```sh
-npm create astro@latest -- --template blog
-```
+# HappyRoll Website
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+Welcome to the HappyRoll website repository. This project serves as the official online presence for HappyRoll, a web design and digital marketing service tailored specifically for sushi restaurants.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Project Overview
 
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+The HappyRoll website showcases our services, portfolio, and pricing, and provides valuable insights through our blog. Our goal is to help sushi restaurants enhance their online presence and attract more customers through effective web design and marketing strategies.
 
-Features:
+## Sitemap
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+- **Home**: Introduction to HappyRoll and our mission.
+- **Pricing**: Details on our value-driven service plans.
+- **About**: Information about HappyRoll and our team.
+- **Gallery**: Examples of our work with sushi restaurants.
+- **Blog**: Articles and tips on web design and marketing.
+- **Privacy Policy**: Information on how we handle data and protect privacy.
+- **Terms of Service**: Guidelines for using our website and services.
+- **404**: Error page for non-existent links.
 
-## 🚀 Project Structure
+## Getting Started
 
-Inside of your Astro project, you'll see the following folders and files:
+This project is built using the following tools:
 
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
+- **Astro**: A modern static site generator. [Astro Website](https://astro.build)
+- **Tachyons**: A functional CSS framework. [Tachyons Website](http://tachyons.io)
+- **Netlify**: Hosting and deployment platform. [Netlify Website](https://www.netlify.com)
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Refer to the official documentation of each tool for setup, configuration, and usage instructions.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Deployment
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+The website is hosted on Netlify and deploys automatically from the main branch. Ensure all changes are reviewed and tested locally before pushing to maintain a stable production environment.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Contact
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+For any inquiries, please contact us at [team@myhappyroll.com](mailto:team@myhappyroll.com).
