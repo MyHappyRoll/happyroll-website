@@ -12,10 +12,17 @@ import { Icon } from 'astro-icon/components'
         /* Header height + section top-padding + section header margin */
         top: calc(75px + 2rem + 1rem);
     }
+
+    @media screen and (max-width: 60rem) {
+        .left-box {
+            position: relative;
+            top: initial;
+        }
+    }
 </style>
 <section class="fw bg-primary-600 white">
-    <div class="mw8 center ph4 pv4 flex relative">
-        <div class="w-50 self-start left-box">
+    <div class="mw8 center ph4 pv4 flex relative flex-wrap flex-nowrap-l">
+        <div class="w-50-l self-start left-box">
             <h3 class="f2">Ready to roll?</h3>
             <p>On this free 30-minute call, you'll get:</p>
             <ul class="list pl0">
@@ -25,7 +32,7 @@ import { Icon } from 'astro-icon/components'
                 <li class="flex mb3"><span class="shrink-0 dib br-pill bg-white primary-600 block w1 h1 tc mr1"><Icon class="dib" name="check" size="10" /></span>Expert Guidance: Actionable advice to attract more customers and enhance your online presence.</li>
             </ul>
         </div>
-        <div class="w-50 pl4 mt4">
+        <div class="w-50-l w-100 pl4 mt4">
             <!-- Cal inline embed code begins -->
             <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline"></div>
             <script type="text/javascript">

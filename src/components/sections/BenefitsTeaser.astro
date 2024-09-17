@@ -6,7 +6,7 @@ import { Icon } from 'astro-icon/components'
     .list-item {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        -webkit-line-clamp: 2;
         line-clamp: 2;
     }
 
@@ -26,27 +26,26 @@ import { Icon } from 'astro-icon/components'
     [data-icon="check"] {
         display: inline-block;
         color: var(--white);
-        /* transform: scale(2) */
     }
 </style>
 
-<section class="bg-light-gray bb b--gray">
-    <ul class="m0 p0 flex center list">
-        <li class="list-item ph2 pv3 br b--gray">
-            <span class="check mr2"><Icon size="13" name="check" />
-            </span>Get found by more customers near you.
+<section class="bg-neutral-200 bb b--gray">
+    <ul class="mw8 ph2 flex center list flex-wrap flex-nowrap-l">
+        <li class="list-item w-100 ph2 pv3 br-l bb bb-0-l b--gray justify-center justify-between-l">
+            <span class="check mr2"><Icon size="13" name="check" /></span>
+            <span>Get found by more customers near you.</span>
         </li>
-        <li class="list-item ph2 pv3 br b--gray">
-            <span class="check mr2"><Icon size="13" name="check" />
-            </span>Save thousands on your marketing.
+        <li class="list-item w-100 ph2 pv3 br-l bb bb-0-l b--gray justify-center justify-between-l">
+            <span class="check mr2"><Icon size="13" name="check" /></span>
+            <span>Save thousands on your marketing.</span>
         </li>
-        <li class="list-item ph2 pv3 br b--gray">
-            <span class="check mr2"><Icon size="13" name="check" />
-            </span>Specially designed for sushi restaurants.
+        <li class="list-item w-100 ph2 pv3 br-l bb bb-0-l b--gray justify-center justify-between-l">
+            <span class="check mr2"><Icon size="13" name="check" /></span>
+            <span>Specially designed for sushi restaurants.</span>
         </li>
-        <li class="list-item ph2 pv3">
-            <span class="check mr2"><Icon size="13" name="check" />
-            </span>Service backed by results guarantee.
+        <li class="list-item w-100 ph2 pv3 justify-center justify-between-l">
+            <span class="check mr2"><Icon size="13" name="check" /></span>
+            <span>Service backed by results guarantee.</span>
         </li>
     </ul>
 </section>

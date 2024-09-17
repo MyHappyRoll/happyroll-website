@@ -9,7 +9,16 @@ import Card from "../Card.astro";
         position: sticky;
         /* offset from the sticky header.
         /* Header height + section top-padding + section header margin */
-        top: calc(75px + 2rem + 1rem);
+        top: 75px;
+        background: linear-gradient(
+            var(--neutral-200),
+            var(--neutral-200),
+            var(--neutral-200),
+            var(--neutral-200),
+            var(--neutral-200),
+            var(--neutral-200),
+            transparent
+        );
     }
 
     .focusable__inner {
@@ -24,28 +33,28 @@ import Card from "../Card.astro";
     }
 </style>
 
-<section class="bg-light-gray">
-    <div class="mw8 center relative pt4 pb5 ph4 flex">
-        <div class="w-50 self-start left-box">
-            <h3 class="f2">Bring order to the chaos and give your sushi restaurant marketing superpowers.</h3>
+<section class="bg-neutral-200">
+    <div class="mw8 center relative pt4 pb5 ph4 flex flex-wrap">
+        <div class="w-50-l self-start left-box z-1 pb5">
+            <h3 class="f2">Give your sushi restaurant marketing superpowers.</h3>
             <p>Websites are only the tip of the iceberg of what we do at HappyRoll. You get everything you need to attract new sushi lovers and keep them coming back — all with minimal effort.</p>
             <div class="flex items-center">
                 <span class="white"><Button variant="primary" title="Book a call" /></span>
                 <Button variant="minimal" title="See pricing" />
             </div>
         </div>
-        <div class="w-50 mt4">
-            <div class="ml4 mb4 js-focusable">
+        <div class="w-50-l mt4">
+            <div class="w-100 ml4-l mb4 js-focusable">
                 <div class="focusable__inner">
                     <Card title="Fully-optimized sushi restaurant website." description="With nearly 60% of searches happening on mobile, your HappyRoll plan comes with a website built to get you found more often."/>
                 </div>
             </div>
-            <div class="ml4 mb4 js-focusable">
+            <div class="w-100 ml4-l mb4 js-focusable">
                 <div class="focusable__inner">
                     <Card title="Done-For-You Restaurant Social Media Management." description="Boost brand awareness and engagement on social platforms. Interact with customers and build a loyal following."/>
                 </div>
             </div>
-            <div class="ml4 mb4 js-focusable">
+            <div class="w-100 ml4-l mb4 js-focusable">
                 <div class="focusable__inner">
                     <Card title="Google Business Profile Management." description="Improve local search visibility and attract more customers."/>
                 </div>
