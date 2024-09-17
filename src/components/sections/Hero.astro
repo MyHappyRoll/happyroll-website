@@ -9,6 +9,7 @@ import MakiAnimation from "../../videos/maki_anim.mp4";
     overflow: hidden;
     position: relative;
     margin-top: -6rem;
+    height: calc(100vh + 6rem);
   }
 
   .hero__inner-wrapper {
@@ -39,6 +40,7 @@ import MakiAnimation from "../../videos/maki_anim.mp4";
   @media screen and (min-width: 64rem) {
     .hero {
       padding-top: 10rem;
+      height: calc(100vh + 2rem);
     }
 
     .maki-animation {
@@ -47,7 +49,7 @@ import MakiAnimation from "../../videos/maki_anim.mp4";
     }
   }
 </style>
-<section class="hero bg-light-gray">
+<section class="hero bg-neutral-200">
   <div class="hero__inner-wrapper flex">
     <div class="w-two-thirds-ns z-1">
       <h2 class="f2 f1-l">
@@ -76,7 +78,7 @@ import MakiAnimation from "../../videos/maki_anim.mp4";
           "makiAnimation"
         ) as HTMLVideoElement;
 
-        anim?.addEventListener("loadeddata", () => {
+        anim?.addEventListener('loadeddata', () => {
           if (!anim) return;
           anim.playbackRate = 0.25;
         });
