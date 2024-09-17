@@ -1,0 +1,174 @@
+---
+
+---
+
+<style>
+  .header-container {
+    height: 60px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    border-radius: 12px;
+  }
+
+  button {
+    height: 45px;
+    transition: 300ms;
+  }
+
+  .button {
+    height: 45px;
+    transition: 300ms;
+  }
+
+  button:hover {
+    background-color: var(--primary-500);
+  }
+
+  .button:hover {
+    background-color: var(--primary-400);
+  }
+
+  .logo img {
+    max-width: 120px;
+  }
+
+  .mw-340 {
+    max-width: 340px;
+  }
+
+  .header__middle {
+    transition: 300ms;
+  }
+
+  .header__middle .link:hover {
+    color: var(--primary-600);
+  }
+
+  #menu {
+    top: 92px;
+  }
+
+  .menu-container {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  }
+
+  @media screen and (min-width: 480px) {
+    .header-container {
+      height: 90px;
+      border-radius: 20px;
+    }
+
+    .logo img {
+      max-width: 160px;
+    }
+
+    #menu {
+      top: 122px;
+    }
+
+    .menu-container {
+      height: 35rem;
+    }
+  }
+</style>
+
+<header
+  class="pv3 pv4-l flex items-center justify-center w-100 bg-neutral-100 ph3 relative"
+>
+  <div
+    class="header-container bg-white w-100 mw8 ph2 ph3-ns flex items-center justify-between"
+  >
+    <div class="header__left flex items-center h-100 w-40-ns w-25-l">
+      <a href="/" class="logo flex items-center" aria-label="Back to homepage">
+        <img
+          src="/images/happyroll-logo-pink.svg"
+          alt="HappyRoll Smiling H logo in pink."
+          width="120"
+          height="37.2"
+          class="w-100 h-100"
+        />
+      </a>
+    </div>
+    <div
+      class="header__middle dn flex-l items-center h-100 w-50-l justify-center"
+    >
+      <nav class="w-100 mw-340">
+        <ul class="list pl0 mv0 flex items-center justify-between">
+          <li>
+            <a href="/pricing/" class="link neutral-800">Pricing</a>
+          </li>
+          <li>
+            <a href="/about/" class="link neutral-800">About</a>
+          </li>
+          <li>
+            <a href="/gallery/" class="link neutral-800">Gallery</a>
+          </li>
+          <li>
+            <a href="/blog/" class="link neutral-800">Blog</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header__right flex items-center h-100 w-25-ns justify-end">
+      <div class="dn-l">
+        <button
+          id="menuButton"
+          class="br-pill bg-primary-600 white b--neutral-800 ba ph3"
+          >Menu</button
+        >
+      </div>
+      <div class="dn db-l">
+        <a
+          href="#book-a-call"
+          class="button br-pill bg-primary-600 white b--neutral-800 ba ph3 flex items-center link"
+          >Book a Call</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <div id="menu" class="absolute w-100 vh-100 bg-transparent ph3 dn">
+    <div class="menu-container bg-white h-50 br4 pt3 mw7 center">
+      <nav class="h-50 h-75-ns">
+        <ul class="list tc pl0 flex flex-column justify-around h-100 mt0">
+          <li>
+            <a href="/pricing/" class="link neutral-800 f3 f2-ns">Pricing</a>
+          </li>
+          <li>
+            <a href="/about/" class="link neutral-800 f3 f2-ns">About</a>
+          </li>
+          <li>
+            <a href="/gallery/" class="link neutral-800 f3 f2-ns">Gallery</a>
+          </li>
+          <li>
+            <a href="/blog/" class="link neutral-800 f3 f2-ns">Blog</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="flex justify-center h-50 pt4 pt3-ns">
+        <a
+          href="#book-a-call"
+          class="br-pill bg-primary-600 white b--neutral-800 ba ph3 flex items-center w-fc link f3 h3"
+          >Book a Call</a
+        >
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  let menuButton = document.getElementById("menuButton");
+  let menu = document.getElementById("menu");
+
+  menuButton?.addEventListener("click", (event) => {
+    menu?.classList.contains("dn")
+      ? menu.classList.remove("dn")
+      : menu?.classList.add("dn");
+
+    if (menu?.classList.contains("dn")) {
+      menuButton.innerText = "Menu";
+    } else {
+      menuButton.innerText = "Close";
+    }
+  });
+</script>

@@ -295,6 +295,7 @@ body {
   font-family: "Bricolage Grotesque Variable", sans-serif;
 }
 
-.br5 {
-  border-radius: 1.3em;
+/* --- Widths --- */
+.w-fc {
+  width: fit-content;
 }
