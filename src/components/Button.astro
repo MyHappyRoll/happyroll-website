@@ -1,0 +1,35 @@
+---
+/* Three styles of button: 1. Pink Button, 2. Transparent Button, 3. Text Button */
+const { href, isPinkButton, isTransparentButton, isTextButton } = Astro.props;
+---
+
+<style>
+  .button {
+    height: 45px;
+    transition: 300ms;
+  }
+
+  .button__pink:hover {
+    background-color: var(--primary-400);
+  }
+</style>
+
+<a
+  href={href}
+  class:list={[
+    "button ph3 flex items-center link",
+    { "bg-primary-600": isPinkButton },
+    { button__pink: isPinkButton },
+    { white: isPinkButton },
+    { ba: isPinkButton },
+    { "br-pill": isPinkButton },
+    { "b--neutral-800": isPinkButton },
+    { white: isTransparentButton },
+    { ba: isTransparentButton },
+    { "br-pill": isTransparentButton },
+    { "b--white": isTransparentButton },
+    { "neutral-800": isTextButton },
+  ]}
+>
+  <slot />
+</a>
