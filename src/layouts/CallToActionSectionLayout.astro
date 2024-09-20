@@ -1,0 +1,58 @@
+---
+
+---
+
+<style>
+  .shrink-0 {
+    flex-shrink: 0;
+  }
+
+  .left-box {
+    position: sticky;
+    /* offset from the sticky header.
+        /* Header height + section top-padding + section header margin */
+    top: calc(75px + 2rem + 1rem);
+  }
+
+  @media screen and (max-width: 60rem) {
+    .left-box {
+      position: relative;
+      top: initial;
+    }
+  }
+</style>
+<section class="fw bg-primary-600 white">
+  <div class="mw8 center ph4 pv4 flex relative flex-wrap flex-nowrap-l">
+    <div class="w-50-l self-start left-box">
+      <h3 class="f2">Ready to roll?</h3>
+      <p>On this free 30-minute call, you'll get:</p>
+      <ul class="list pl0">
+        <li class="flex mb3">
+          <span class="shrink-0 dib br-pill primary-600 block w1 h1 tc mr1"
+            ><i class="bi bi-check-circle-fill white"></i></span
+          >Personalized Consultation: An assessment of your current marketing
+          efforts.
+        </li>
+        <li class="flex mb3">
+          <span class="shrink-0 dib br-pill primary-600 block w1 h1 tc mr1"
+            ><i class="bi bi-check-circle-fill white"></i></span
+          >Growth Opportunities: Identification of key areas to increase
+          revenue.
+        </li>
+        <li class="flex mb3">
+          <span class="shrink-0 dib br-pill primary-600 block w1 h1 tc mr1"
+            ><i class="bi bi-check-circle-fill white"></i></span
+          >Tailored Strategy: A customized plan to double your revenue in six
+          months.
+        </li>
+        <li class="flex mb3">
+          <span class="shrink-0 dib br-pill primary-600 block w1 h1 tc mr1"
+            ><i class="bi bi-check-circle-fill white"></i></span
+          >Expert Guidance: Actionable advice to attract more customers and
+          enhance your online presence.
+        </li>
+      </ul>
+    </div>
+    <div class="w-50-l w-100 pl4 mt4"></div>
+  </div>
+</section>

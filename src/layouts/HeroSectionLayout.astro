@@ -1,5 +1,5 @@
 ---
-import Button from "../Button.astro";
+import Button from "../components/Button.astro";
 import MakiAnimation from "../../videos/maki_anim.mp4";
 ---
 
@@ -61,7 +61,9 @@ import MakiAnimation from "../../videos/maki_anim.mp4";
         restaurant.
       </p>
       <div class="flex items-center">
-        <span class="white"><Button variant="primary" title="Book a call" /></span>
+        <span class="white"
+          ><Button variant="primary" title="Book a call" /></span
+        >
         <Button variant="minimal" title="See pricing" />
       </div>
     </div>
@@ -78,7 +80,7 @@ import MakiAnimation from "../../videos/maki_anim.mp4";
           "makiAnimation"
         ) as HTMLVideoElement;
 
-        anim?.addEventListener('loadeddata', () => {
+        anim?.addEventListener("loadeddata", () => {
           if (!anim) return;
           anim.playbackRate = 0.25;
         });
