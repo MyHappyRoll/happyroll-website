@@ -1,6 +1,12 @@
 ---
 /* Three styles of button: 1. Pink Button, 2. Transparent Button, 3. Text Button */
-const { href, isPinkButton, isTransparentButton, isTextButton } = Astro.props;
+const {
+  href,
+  isPinkButton,
+  isTransparentButton,
+  isTextButton,
+  isDarkTransparentButton,
+} = Astro.props;
 ---
 
 <style>
@@ -27,11 +33,18 @@ const { href, isPinkButton, isTransparentButton, isTextButton } = Astro.props;
     { "b--neutral-800": isPinkButton },
     { white: isTransparentButton },
     { ba: isTransparentButton },
+    { bw1: isTransparentButton },
     { "br-pill": isTransparentButton },
     { "b--white": isTransparentButton },
     { "neutral-800": isTextButton },
     { "button--text": isTextButton },
     { dim: isTextButton },
+    { "b--neutral-800": isDarkTransparentButton },
+    { dim: isDarkTransparentButton },
+    { ba: isDarkTransparentButton },
+    { bw1: isDarkTransparentButton },
+    { "br-pill": isDarkTransparentButton },
+    { "neutral-800": isDarkTransparentButton },
   ]}
 >
   <slot />
