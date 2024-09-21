@@ -3,63 +3,50 @@
 ---
 
 <style>
-  .list-item {
-    display: flex;
-    align-items: center;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
+  .benefit-text {
+    width: 174px;
   }
 
-  . {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: var(--neutral-700);
-    display: inline-block;
-    vertical-align: middle;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: none;
-  }
-
-  [data-icon="check"] {
-    display: inline-block;
-    color: var(--white);
+  @media screen and (min-width: 960px) {
+    ul {
+      gap: 20px;
+    }
   }
 </style>
 
-<section class="bg-neutral-200 bb b--gray">
-  <ul class="mw8 ph2 flex center list flex-wrap flex-nowrap-l">
+<section class="bg-neutral-100 bb b--light-gray pv4">
+  <ul
+    class="list pl0 flex flex-wrap flex-nowrap-l w-100 justify-center justify-between-l mw7 mw8-l center items-center"
+  >
     <li
-      class="list-item w-100 ph2 pv3 br-l bb bb-0-l b--gray justify-center justify-between-l"
+      class="flex items-center justify-center br-l b--light-gray pr4-l w-50-ns"
     >
-      <span class="mr2"
-        ><i class="bi bi-check-circle-fill neutral-900 f2"></i></span
-      >
-      <span>Get found by more customers near you.</span>
+      <i class="bi bi-check-circle-fill neutral-900 f2"></i>
+      <p class="pl2 lh-copy neutral-900 benefit-text">
+        Get found by more customers near you.
+      </p>
     </li>
     <li
-      class="list-item w-100 ph2 pv3 br-l bb bb-0-l b--gray justify-center justify-between-l"
+      class="flex items-center justify-center br-l b--light-gray pl3-l pr4-l w-50-ns"
     >
-      <span class="mr2"
-        ><i class="bi bi-check-circle-fill neutral-900 f2"></i></span
-      >
-      <span>Save thousands on your marketing.</span>
+      <i class="bi bi-check-circle-fill neutral-900 f2"></i>
+      <p class="pl2 lh-copy neutral-900 benefit-text">
+        Save thousands on your marketing.
+      </p>
     </li>
     <li
-      class="list-item w-100 ph2 pv3 br-l bb bb-0-l b--gray justify-center justify-between-l"
+      class="flex items-center justify-center br-l b--light-gray pl3-l pr4-l w-50-ns"
     >
-      <span class="mr2"
-        ><i class="bi bi-check-circle-fill neutral-900 f2"></i></span
-      >
-      <span>Specially designed for sushi restaurants.</span>
+      <i class="bi bi-check-circle-fill neutral-900 f2"></i>
+      <p class="pl2 lh-copy neutral-900 benefit-text">
+        Specially-designed for sushi restaurants.
+      </p>
     </li>
-    <li class="list-item w-100 ph2 pv3 justify-center justify-between-l">
-      <span class="mr2"
-        ><i class="bi bi-check-circle-fill neutral-900 f2"></i></span
-      >
-      <span>Service backed by results guarantee.</span>
+    <li class="flex items-center justify-center pr4-l pl3-l pr0-l w-50-ns">
+      <i class="bi bi-check-circle-fill neutral-900 f2"></i>
+      <p class="pl2 lh-copy neutral-900 benefit-text">
+        System backed by results guarantee.
+      </p>
     </li>
   </ul>
 </section>
