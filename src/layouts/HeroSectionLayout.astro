@@ -1,6 +1,5 @@
 ---
 import Button from "../components/Button.astro";
-import MakiAnimation from "../../videos/maki_anim.mp4";
 ---
 
 <style>
@@ -67,24 +66,6 @@ import MakiAnimation from "../../videos/maki_anim.mp4";
         <Button variant="minimal" title="See pricing" />
       </div>
     </div>
-    <div class="w-third-ns">
-      <video
-        id="makiAnimation"
-        class="maki-animation"
-        src={MakiAnimation}
-        loop="true"
-        autoplay="true"
-        muted></video>
-      <script>
-        const anim = document.getElementById(
-          "makiAnimation"
-        ) as HTMLVideoElement;
-
-        anim?.addEventListener("loadeddata", () => {
-          if (!anim) return;
-          anim.playbackRate = 0.25;
-        });
-      </script>
-    </div>
+    <div class="w-third-ns"></div>
   </div>
 </section>

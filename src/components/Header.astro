@@ -1,7 +1,5 @@
 ---
 import Button from "./Button.astro";
-import HLogo from "../images/h_logo.svg";
-import HRLogoFull from "../images/hr_logo_full.svg";
 ---
 
 <style>
@@ -95,15 +93,24 @@ import HRLogoFull from "../images/hr_logo_full.svg";
   <div class="header__inner-wrapper w-100">
     <!-- Left -->
     <div class="dn-l">
-      <a class="flex items-center" href="/">
-        <img src={HRLogoFull.src} alt="HappyRoll" width="160" /></a
-      >
+      <img
+        src="/images/happyroll-pink-logo.svg"
+        alt="HappyRoll Smiling H logo in pink."
+        width="120"
+        height="37.2"
+        class="w-100 h-100"
+      />
     </div>
     <div class="w-20 dn db-l">
-      <a class="brand grow" href="/">
-        <img class="brand__logo" src={HLogo.src} alt="HappyRoll" />
-        <span class="brand__happyroll pl2 f3 primary-600">HappyRoll</span>
-      </a>
+      <a class="brand grow" href="/"
+        ><img
+          src="/images/happyroll-pink-logo.svg"
+          alt="HappyRoll Smiling H logo in pink."
+          width="120"
+          height="37.2"
+          class="w-100 h-100"
+        /></a
+      >
     </div>
     <!-- Middle -->
     <div class="w-60 dn flex-l justify-center">
