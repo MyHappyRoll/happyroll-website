@@ -1,8 +1,7 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
+import PageLayout from "../layouts/PageLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Hero from "../layouts/HeroSectionLayout.astro";
 import Need from "../layouts/NeedSectionLayout.astro";
 import BenefitsTeaser from "../layouts/BenefitsTeaserSectionLayout.astro";
@@ -11,23 +10,20 @@ import Solution from "../layouts/SolutionSectionLayout.astro";
 import CallToAction from "../layouts/CallToActionSectionLayout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <main>
-      <Header />
-      <div class="section-container flex flex-column">
-        <Hero />
-        <Need />
-        <BenefitsTeaser />
-        <FeaturesBenefits />
-        <Solution />
-        <CallToAction />
-      </div>
-      <Footer />
-    </main>
-  </body>
-</html>
+<PageLayout
+  title="Sushi Restaurant Web Design & Marketing | HappyRoll"
+  description="Boost your sushi restaurant's online presence with custom web design and digital marketing from HappyRoll."
+>
+  <main>
+    <Header />
+    <div class="section-container flex flex-column">
+      <Hero />
+      <Need />
+      <BenefitsTeaser />
+      <FeaturesBenefits />
+      <Solution />
+      <CallToAction />
+    </div>
+    <Footer />
+  </main>
+</PageLayout>
