@@ -27,7 +27,7 @@ as well as for things like secondary buttons and links. */
   --neutral-200: #e4e7eb;
   --neutral-300: #cbd2d9;
   --neutral-400: #9aa5b1;
-  --neutral-500: #7b8794;
+  --neutral-500: #7b8794; /* Body text color on light backgrounds */
   --neutral-600: #616e7c;
   --neutral-700: #52606d;
   --neutral-800: #3e4c59; /* Color used for header navigation links, primary button border color, secondary button background, and heading text color */
@@ -293,8 +293,4 @@ as well as for things like secondary buttons and links. */
 /* Custom CSS */
 body {
   font-family: "Bricolage Grotesque Variable", sans-serif;
-}
-
-.br5 {
-  border-radius: 1.3em;
 }

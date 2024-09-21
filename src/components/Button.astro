@@ -1,34 +1,38 @@
 ---
-const { variant, title } = Astro.props;
-
-const variantStyles = {
-  primary:
-    "f5 button primary link br3 ba b--neutral-800 ph3 pv2 dib white bg-primary-600 flex items-center justify-center",
-  secondary: "f5 button link br3 ph3 pv2 dib white bg-neutral-800",
-  disabled: "f5 button br3 ph3 pv2 dib gray bg-neutral-200 disabled",
-  minimal: "f5 button link br3 ph3 pv2 dib black bg-transparent",
-  outline: "f5 button link br3 ph3 ba pv2 dib black bg-transparent b--black",
-  hyperminimal: "fb link ph3 dib pv2",
-  "primary-outline":
-    "f5 button link br3 bw1 fw5 ph3 ba pv2 dib primary-600 bg-transparent b-primary-600",
-};
+/* Three styles of button: 1. Pink Button, 2. Transparent Button, 3. Text Button */
+const { href, isPinkButton, isTransparentButton, isTextButton } = Astro.props;
 ---
 
 <style>
-  a {
-    color: currentColor;
-    cursor: pointer;
-  }
-
-  .disabled {
-    pointer-events: none;
-  }
-
-  .primary {
+  .button {
     height: 45px;
-    width: 145px;
+    transition: 300ms;
+    width: fit-content;
+  }
+
+  .button--pink:hover {
+    background-color: var(--primary-400);
   }
 </style>
-<a class={variantStyles[variant] + " " + Astro.props.class} {...Astro.props}
-  >{title}</a
+
+<a
+  href={href}
+  class:list={[
+    "button ph3 flex items-center link",
+    { "bg-primary-600": isPinkButton },
+    { "button--pink": isPinkButton },
+    { white: isPinkButton },
+    { ba: isPinkButton },
+    { "br-pill": isPinkButton },
+    { "b--neutral-800": isPinkButton },
+    { white: isTransparentButton },
+    { ba: isTransparentButton },
+    { "br-pill": isTransparentButton },
+    { "b--white": isTransparentButton },
+    { "neutral-800": isTextButton },
+    { "button--text": isTextButton },
+    { dim: isTextButton },
+  ]}
 >
+  <slot />
+</a>
