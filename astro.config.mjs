@@ -4,6 +4,6 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://example.com",
+  site: "https://happyroll.netlify.app", // TODO: Set to domain when live.
   integrations: [mdx(), sitemap()],
 });
