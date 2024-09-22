@@ -1,10 +1,10 @@
 ---
 import Button from "../components/Button.astro";
-import Card from "../components/Card.astro";
+import IconCard from "../components/IconCard.astro";
 ---
 
 <style>
-  .focusable__inner {
+  /* .focusable__inner {
     transition: all 200ms ease-in-out;
     opacity: 0.5;
     transform: scale(0.9);
@@ -13,25 +13,15 @@ import Card from "../components/Card.astro";
   .focused {
     opacity: 1;
     transform: scale(1);
-  }
+  } */
 
   .mobile-cards {
     gap: 30px;
   }
 
-  .mobile-card {
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-    border-radius: 20px;
-    max-width: 450px;
-  }
-
-  .section-headline {
-    width: 320px;
-  }
-
   @media screen and (min-width: 480px) {
-    .mobile-card {
-      border-radius: 30px;
+    .section-headline {
+      width: 320px;
     }
   }
 
@@ -73,99 +63,56 @@ import Card from "../components/Card.astro";
         </div>
       </div>
     </div>
-    <div class="dn-l w-100 mobile-cards flex flex-column">
-      <div
-        class="mobile-card flex flex-column flex-row-ns bg-white w-100 ph3 pv4 center"
-      >
-        <div class="mobile-card--left w-20-ns pv3-ns">
-          <div
-            class="w3 h3 bg-neutral-100 br-100 flex items-center justify-center"
-          >
-            <i class="bi bi-laptop f2 neutral-600"></i>
-          </div>
-        </div>
-        <div class="mobile-card--right w-80-ns pv3-ns">
-          <h3 class="f5 f3-ns lh-title neutral-800 mt0-ns fw5">
-            Fully-Optimized Sushi Restaurant Website
-          </h3>
-          <p class="neutral-600 lh-copy sans-serif mb0 f6 f5-ns">
-            With nearly 60% of searches happening on mobile, your HappyRoll plan
-            comes with a website built to get you found more often.
-          </p>
-        </div>
-      </div>
-      <div
-        class="mobile-card flex flex-column flex-row-ns bg-white w-100 ph3 pv4 center"
-      >
-        <div class="mobile-card--left w-20-ns pv3-ns">
-          <div
-            class="w3 h3 bg-neutral-100 br-100 flex items-center justify-center"
-          >
-            <i class="bi bi-chat-dots f2 neutral-600"></i>
-          </div>
-        </div>
-        <div class="mobile-card--right w-80-ns pv3-ns">
-          <h3 class="f5 f3-ns lh-title neutral-800 mt0-ns fw5">
-            Done-For-You Restaurant Social Media Management
-          </h3>
-          <p class="neutral-600 lh-copy sans-serif mb0 f6 f5-ns">
-            Boost brand awareness and engagement on social platforms. Interact
-            with customers and build a loyal following.
-          </p>
-        </div>
-      </div>
-      <div
-        class="mobile-card flex flex-column flex-row-ns bg-white w-100 ph3 pv4 center"
-      >
-        <div class="mobile-card--left w-20-ns pv3-ns">
-          <div
-            class="w3 h3 bg-neutral-100 br-100 flex items-center justify-center"
-          >
-            <i class="bi bi-geo-alt f2 neutral-600"></i>
-          </div>
-        </div>
-        <div class="mobile-card--right w-80-ns pv3-ns">
-          <h3 class="f5 f3-ns lh-title neutral-800 mt0-ns fw5">
-            Google Business Profile Management
-          </h3>
-          <p class="neutral-600 lh-copy sans-serif mb0 f6 f5-ns">
-            Improve local search visibility and attract more customers. Ensure
-            accurate and up-to-date information on Google.
-          </p>
-        </div>
-      </div>
-    </div>
 
-    <div class="dn db-l w-50-l mt4">
+    <div class="w-100 flex flex-column items-center w-50-l mt4-l">
       <div class="w-100 ml4-l mb4 js-focusable">
         <div class="focusable__inner">
-          <Card
-            title="Fully-optimized sushi restaurant website."
-            description="With nearly 60% of searches happening on mobile, your HappyRoll plan comes with a website built to get you found more often."
-          />
+          <IconCard title="Fully-optimized sushi restaurant website.">
+            <i slot="icon" class="bi bi-laptop f2 neutral-600"></i>
+            <p
+              slot="description"
+              class="neutral-600 lh-copy sans-serif mb0 f6 f5-ns"
+            >
+              With nearly 60% of searches happening on mobile, your HappyRoll
+              plan comes with a website built to get you found more often.
+            </p>
+          </IconCard>
         </div>
       </div>
       <div class="w-100 ml4-l mb4 js-focusable">
         <div class="focusable__inner">
-          <Card
-            title="Done-For-You Restaurant Social Media Management."
-            description="Boost brand awareness and engagement on social platforms. Interact with customers and build a loyal following."
-          />
+          <IconCard title="Done-For-You Restaurant Social Media Management."
+            ><i slot="icon" class="bi bi-chat-dots f2 neutral-600"></i>
+
+            <p
+              slot="description"
+              class="neutral-600 lh-copy sans-serif mb0 f6 f5-ns"
+            >
+              Boost brand awareness and engagement on social platforms. Interact
+              with customers and build a loyal following.
+            </p>
+          </IconCard>
         </div>
       </div>
       <div class="w-100 ml4-l mb4 js-focusable">
         <div class="focusable__inner">
-          <Card
-            title="Google Business Profile Management."
-            description="Improve local search visibility and attract more customers."
-          />
+          <IconCard title="Google Business Profile Management."
+            ><i slot="icon" class="bi bi-geo-alt f2 neutral-600"></i>
+            <p
+              slot="description"
+              class="neutral-600 lh-copy sans-serif mb0 f6 f5-ns"
+            >
+              Improve local search visibility and attract more customers. Ensure
+              accurate and up-to-date information on Google.
+            </p>
+          </IconCard>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<script>
+<!-- <script>
   (function (observedElements: NodeListOf<Element>) {
     if (!observedElements.length || !observedElements[0]) {
       return;
@@ -189,4 +136,4 @@ import Card from "../components/Card.astro";
 
     observedElements.forEach((el) => observer.observe(el));
   })(document.querySelectorAll(".js-focusable"));
-</script>
+</script> -->
