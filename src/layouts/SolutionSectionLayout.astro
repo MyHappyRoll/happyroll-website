@@ -2,29 +2,145 @@
 import PricingCard from "../components/PricingCard.astro";
 ---
 
-<section class="mw8 center pb5">
-  <div class="w-60 center mb5-l mb4">
-    <h3 class="f2 tc">Our 3-step process helps you attract more sushi fans.</h3>
-    <p class="tc">
-      We ensure your sushi restaurant shines online, helping you get discovered
-      — and rediscovered — by customers more often.
+<style>
+  .section__content--top {
+    max-width: 500px;
+  }
+
+  .cards-container {
+    gap: 60px;
+  }
+
+  .card {
+    border-radius: 20px;
+    max-width: 320px;
+    min-height: 390px;
+  }
+
+  .dashed-arrow--left {
+    top: -45px;
+    right: 63.5%;
+  }
+
+  .dashed-arrow--right {
+    top: -45px;
+    right: 28%;
+  }
+
+  .exclamation {
+    top: -29px;
+    right: -1.5%;
+    transform: rotate(-5deg);
+  }
+
+  @media screen and (min-width: 480px) {
+    .card {
+      border-radius: 32px;
+    }
+
+    .card__top {
+      height: 100px;
+    }
+  }
+
+  @media screen and (min-width: 960px) {
+    .cards-container {
+      gap: 20px;
+    }
+  }
+
+  @media screen and (min-width: 1036px) {
+    .dashed-arrow--left {
+      right: 62.5%;
+    }
+
+    .dashed-arrow--right {
+      right: 30%;
+    }
+
+    .exclamation {
+      right: 0.5%;
+    }
+  }
+</style>
+
+<section class="pv5">
+  <div
+    class="section__content section__content--top center ph3 ph0-l w-90-ns w-100-l"
+  >
+    <h2 class="f4 f3-ns f2-l neutral-800 lh-title fw6 tc">
+      {"Our 3-step process to help you attract more sushi fans.".toTitleCase()}
+    </h2>
+    <p class="neutral-600 lh-copy sans-serif tc w-90-ns center w-100-l">
+      We ensure your sushi restaurant shines online, helping you get
+      discovered&mdash;and rediscovered&mdash;by customers more often.
     </p>
   </div>
-  <!-- <div class="flex flex-wrap flex-nowrap-l justify-center">
-    <PricingCard
-      title="Step 1. You get found online."
-      description="Sushi lovers find your restaurant from a Google search, sees a few of your sushi pics while hungry scrolling Instagram, or sees one of your sushi ads on Google."
-      class="w-third-l w-two-thirds-m mv2 mh2 ba bg-neutral-200 b--neutral-800"
-    />
-    <PricingCard
-      title="Step 2. You get more traffic."
-      description="Sushi lover clicks through to your website to browse your menu and signs up to get promo of the day."
-      class="w-third-l w-two-thirds-m mv2 mh2 ba bg-neutral-200 b--neutral-800"
-    />
-    <PricingCard
-      title="Step 2. You make money."
-      description="Sushi lover places an online order, makes a reservation, or get GPS directions to stop by your restaurant."
-      class="w-third-l w-two-thirds-m mv2 mh2 ba bg-primary-600 b--neutral-800 white"
-    />
-  </div> -->
+  <div class="section__content section__content--bottom ph3 pt4 pv5-l">
+    <div
+      class="cards-container flex flex-column items-center flex-row-l mw8 center relative"
+    >
+      <div class="card w-third-l bg-neutral-100 ba b--neutral-900 ph3 pv4">
+        <div class="card__top h3">
+          <h3 class="f3 lh-title neutral-800 mt0 fw6 f2-ns">
+            {"Step 1: You get found online.".toTitleCase()}
+          </h3>
+        </div>
+        <div class="card__bottom">
+          <p class="neutral-600 lh-copy sans-serif">
+            Sushi lovers find your restaurant from a Google search, sees a few
+            of your sushi pics while hungry scrolling Instagram, or sees one of
+            your sushi ads on Google.
+          </p>
+        </div>
+        <img
+          src="/images/dashed-arrow.svg"
+          alt=""
+          width="100"
+          height="69.6"
+          class="absolute dashed-arrow dashed-arrow--left"
+        />
+      </div>
+      <div class="card w-third-l bg-neutral-100 ba b--neutral-900 ph3 pv4">
+        <div class="card__top h3">
+          <h3 class="f3 lh-title neutral-800 mt0 fw6 f2-ns">
+            {"Step 2: You get more traffic.".toTitleCase()}
+          </h3>
+        </div>
+        <div class="card__bottom">
+          <p class="neutral-600 lh-copy sans-serif">
+            Sushi lovers click through to your website to browse your menu and
+            signs up to get promo of the day.
+          </p>
+        </div>
+      </div>
+      <img
+        src="/images/dashed-arrow.svg"
+        alt=""
+        width="100"
+        height="69.6"
+        class="absolute dashed-arrow dashed-arrow--right"
+      />
+      <div class="card w-third-l bg-primary-600 ba b--neutral-900 ph3 pv4">
+        <div class="card__top h3">
+          <h3 class="f3 lh-title white mt0 fw6 f2-ns">
+            {"Step 2: You make money.".toTitleCase()}
+          </h3>
+        </div>
+        <div class="card__bottom">
+          <p class="white lh-copy sans-serif">
+            Sushi lover places an online order, makes a reservation, or get GPS
+            directions to stop by your restaurant.
+          </p>
+        </div>
+      </div>
+      <img
+        src="/images/exclamation.svg"
+        alt=""
+        width="31.6"
+        height="33.2"
+        class="absolute exclamation"
+      />
+    </div>
+  </div>
 </section>

@@ -40,13 +40,13 @@ import IconCard from "../components/IconCard.astro";
 </style>
 
 <section class="bg-neutral-100">
-  <div class="mw8 center relative pt4 pb5 ph3 flex flex-wrap">
+  <div class="mw8 center relative pt4 pb5 ph3 ph4-l flex flex-wrap">
     <div class="w-100 w-50-l self-start left-box z-1 pb5">
       <div class="measure center">
         <h2
-          class="section-headline f4 f3-ns f2-l neutral-800 lh-title fw6 tc tl-l center mh0-l"
+          class="section-headline f4 f3-ns f2-l neutral-800 lh-title fw6 tc tl-l center mh0-l ttc"
         >
-          Give your sushi restaurant marketing superpowers.
+          {"Give your sushi restaurant marketing superpowers.".toTitleCase()}
         </h2>
         <p class="neutral-600 lh-copy sans-serif tc tl-l">
           Websites are only the tip of the iceberg of what we do at HappyRoll.
@@ -81,7 +81,7 @@ import IconCard from "../components/IconCard.astro";
       </div>
       <div class="w-100 ml4-l mb4 js-focusable">
         <div class="focusable__inner">
-          <IconCard title="Done-For-You Restaurant Social Media Management."
+          <IconCard title="Done-for-you restaurant social media management."
             ><i slot="icon" class="bi bi-chat-dots f2 neutral-600"></i>
 
             <p
@@ -96,7 +96,7 @@ import IconCard from "../components/IconCard.astro";
       </div>
       <div class="w-100 ml4-l mb4 js-focusable">
         <div class="focusable__inner">
-          <IconCard title="Google Business Profile Management."
+          <IconCard title="Google business profile management."
             ><i slot="icon" class="bi bi-geo-alt f2 neutral-600"></i>
             <p
               slot="description"
