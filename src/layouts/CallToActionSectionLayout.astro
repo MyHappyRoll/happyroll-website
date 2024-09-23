@@ -3,56 +3,259 @@
 ---
 
 <style>
-  .shrink-0 {
-    flex-shrink: 0;
+  section {
+    min-height: 75vh;
   }
 
-  .left-box {
-    position: sticky;
-    /* offset from the sticky header.
-        /* Header height + section top-padding + section header margin */
-    top: calc(75px + 2rem + 1rem);
+  .section__container {
+    gap: 60px;
   }
 
-  @media screen and (max-width: 60rem) {
-    .left-box {
-      position: relative;
-      top: initial;
+  ul {
+    gap: 20px;
+  }
+
+  li {
+    gap: 8px;
+  }
+
+  form {
+    gap: 30px;
+  }
+
+  input,
+  select {
+    height: 45px;
+    padding-left: 16px;
+    padding-right: 16px;
+    color-scheme: dark;
+  }
+
+  textarea {
+    resize: none;
+    min-height: 200px;
+  }
+
+  .form__input-group {
+    gap: 25px;
+  }
+
+  @media screen and (min-width: 480px) {
+    .form__input-group {
+      gap: 0px;
+
+      .form__input {
+        width: 48%;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1070px) {
+    .section__container {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 </style>
-<section class="fw bg-primary-600 white">
-  <div class="mw8 center ph4 pv4 flex relative flex-wrap flex-nowrap-l">
-    <div class="w-50-l self-start left-box">
-      <h3 class="f2">Ready to roll?</h3>
-      <p>On this free 30-minute call, you'll get:</p>
-      <ul class="list pl0">
-        <li class="flex mb3">
-          <span class="shrink-0 dib br-pill primary-600 block w1 h1 tc mr1"
-            ><i class="bi bi-check-circle-fill white"></i></span
-          >Personalized Consultation: An assessment of your current marketing
-          efforts.
-        </li>
-        <li class="flex mb3">
-          <span class="shrink-0 dib br-pill primary-600 block w1 h1 tc mr1"
-            ><i class="bi bi-check-circle-fill white"></i></span
-          >Growth Opportunities: Identification of key areas to increase
-          revenue.
-        </li>
-        <li class="flex mb3">
-          <span class="shrink-0 dib br-pill primary-600 block w1 h1 tc mr1"
-            ><i class="bi bi-check-circle-fill white"></i></span
-          >Tailored Strategy: A customized plan to double your revenue in six
-          months.
-        </li>
-        <li class="flex mb3">
-          <span class="shrink-0 dib br-pill primary-600 block w1 h1 tc mr1"
-            ><i class="bi bi-check-circle-fill white"></i></span
-          >Expert Guidance: Actionable advice to attract more customers and
-          enhance your online presence.
-        </li>
-      </ul>
+
+<section class="fw bg-primary-600 white section">
+  <div
+    class="section__container mw8 center ph3 ph4-ns pv4 pt5-n pb6-ns flex flex-column flex-row-l relative"
+  >
+    <div class="w-100 mw6 center w-50-l self-start left-box">
+      <div class="measure pt3-l">
+        <h2 class="f2 f1-ns fw6">
+          {
+            "Ready to take your sushi restaurant to the next level?".toTitleCase()
+          }
+        </h2>
+        <p class="sans-serif lh-copy">
+          Fill out the contact form today to schedule your free 30-minute
+          HappyRoll marketing consultation. Let's discuss how we can help you
+          attract more customers and grow your business with our tailored
+          strategies.
+        </p>
+        <p class="f3 fw5">On this free 30-minute call, you'll get:</p>
+        <ul class="list pl0 pt3 flex flex-column sans-serif w-90-ns">
+          <li class="flex lh-title">
+            <i class="bi bi-check-circle-fill white f4"></i>
+            <span>
+              Personalized Consultation: An assessment of your current marketing
+              efforts.
+            </span>
+          </li>
+          <li class="flex lh-title">
+            <i class="bi bi-check-circle-fill white f4"></i>
+            <span
+              >Growth Opportunities: Identification of key areas to increase
+              revenue.</span
+            >
+          </li>
+          <li class="flex lh-title">
+            <i class="bi bi-check-circle-fill white f4"></i>
+            <span
+              >Tailored Strategy: A customized plan to double your revenue in
+              six months.</span
+            >
+          </li>
+          <li class="flex lh-title">
+            <i class="bi bi-check-circle-fill white f4"></i>
+            <span
+              >Expert Guidance: Actionable advice to attract more customers and
+              enhance your online presence.</span
+            >
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="w-50-l w-100 pl4 mt4"></div>
+    <div class="w-100 w-50-l">
+      <div class="form-container flex justify-center pt5-l mw6 center">
+        <form
+          name="Free 30-Minute Consultation Request"
+          class="w-100 flex flex-column"
+          data-netlify="true"
+        >
+          <div
+            class="form__input-group flex flex-column flex-row-ns justify-between"
+          >
+            <div class="form__input flex flex-column">
+              <label for="first-name" class="o-90 pb2">First name</label>
+              <input
+                type="text"
+                name="First Name"
+                id="first-name"
+                class="bg-transparent ba bw1 br-pill b--primary-400"
+                required
+              />
+            </div>
+            <div class="form__input flex flex-column">
+              <label for="last-name" class="o-90 pb2">Last name</label>
+              <input
+                type="text"
+                name="Last Name"
+                id="last-name"
+                class="bg-transparent ba bw1 br-pill b--primary-400"
+                required
+              />
+            </div>
+          </div>
+          <div class="form__input flex flex-column">
+            <label for="email" class="o-90 pb2">Email address</label>
+            <input
+              type="email"
+              name="Email Address"
+              id="email"
+              class="bg-transparent ba bw1 br-pill b--primary-400"
+              required
+            />
+          </div>
+          <div
+            class="form__input-group flex flex-column flex-row-ns justify-between"
+          >
+            <div class="form__input flex flex-column">
+              <label for="restaurant-name" class="o-90 pb2"
+                >Restaurant name</label
+              >
+              <input
+                type="text"
+                name="Restaurant Name"
+                id="restaurant-name"
+                class="bg-transparent ba bw1 br-pill b--primary-400"
+                required
+              />
+            </div>
+            <div class="form__input flex flex-column">
+              <label for="restaurant-website" class="o-90 pb2"
+                >Restaurant website</label
+              >
+              <input
+                type="url"
+                name="Restaurant Website"
+                id="restaurant-website"
+                class="bg-transparent ba bw1 br-pill b--primary-400"
+              />
+            </div>
+          </div>
+          <div
+            class="form__input-group flex flex-column flex-row-ns justify-between"
+          >
+            <div class="form__input flex flex-column">
+              <label for="preferred-date" class="o-90 pb2"
+                >Preferred date for consultation</label
+              >
+              <input
+                type="date"
+                name="Preferred Date for Consultation"
+                id="preferred-date"
+                class="bg-transparent ba bw1 br-pill b--primary-400 white o-90"
+                required
+              />
+            </div>
+            <div class="form__input flex flex-column">
+              <label for="preferred-time" class="o-90 pb2"
+                >Preferred time for consultation</label
+              >
+              <input
+                type="time"
+                name="Preferred Time for Consultation"
+                id="preferred-time"
+                class="bg-transparent ba bw1 br-pill b--primary-400 white o-90"
+                required
+              />
+            </div>
+          </div>
+          <div
+            class="form__input-group flex flex-column flex-row-ns justify-between"
+          >
+            <div class="form__input flex flex-column">
+              <label for="timezone" class="o-90 pb2">Timezone</label>
+              <select
+                name="Timezone"
+                id="timezone"
+                class="bg-transparent ba bw1 br-pill b--primary-400 white o-90"
+                required
+              >
+                <option value="">Select a timezone</option>
+                <option value="ET">Eastern Time (e.g. New York)</option>
+                <option value="CT">Central Time (e.g. Chicago)</option>
+                <option value="PT">Pacific Time (e.g. Los Angeles)</option>
+                <option value="MT">Mountain Time (e.g. Phoenix)</option>
+              </select>
+            </div>
+            <div class="form__input flex flex-column">
+              <label for="referrer" class="o-90 pb2"
+                >How'd you hear about us?</label
+              >
+              <select
+                name="How Did You Hear About Us?"
+                id="referrer"
+                class="bg-transparent ba bw1 br-pill b--primary-400 white o-90"
+              >
+                <option value="">Choose an option</option>
+                <option value="Google Search">Google Search</option>
+                <option value="Social Media">Social Media</option>
+                <option value="Referral">Referral</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form__input flex flex-column pt3-ns">
+            <label for="challenges-and-goals" class="o-90 pb2"
+              >Marketing challenges or goals?</label
+            >
+            <textarea
+              name="Marketing Challenges or Goals"
+              id="challenges-and-goals"
+              class="bg-transparent ba bw1 br4 b--primary-400 pa3"></textarea>
+          </div>
+
+          <input
+            type="submit"
+            value="Get your free consultation"
+            class="white bg-primary-600 ba bw1 b--white br-pill dim mt3-ns"
+          />
+        </form>
+      </div>
+    </div>
   </div>
 </section>
