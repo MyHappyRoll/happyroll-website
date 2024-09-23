@@ -36,6 +36,8 @@ as well as for things like secondary buttons and links. */
   --black: #1f2933;
 
   --accent: #f7c948;
+
+  scroll-behavior: smooth;
 }
 
 /* --- COLORS --- */

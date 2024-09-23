@@ -1,31 +1,150 @@
 ---
 import Button from "./Button.astro";
+
+const currentYear = new Date().getFullYear();
 ---
 
 <style>
-  @media screen and (max-width: 60rem) {
-    .list {
-      margin-left: -1rem;
+  .footer {
+    height: 514px;
+  }
+
+  .footer__container {
+    gap: 60px;
+  }
+
+  .social-links {
+    gap: 10px;
+  }
+
+  .social-links__icon {
+    width: 48px;
+    height: 48px;
+    border-color: #ffffff59;
+  }
+
+  nav {
+    gap: 16px;
+  }
+
+  ul {
+    gap: 16px;
+  }
+
+  .footer__bottom-row--right,
+  .footer__container {
+    max-width: 514px;
+  }
+
+  @media screen and (min-width: 620px) {
+    nav {
+      flex-direction: row;
+    }
+  }
+
+  @media screen and (min-width: 960px) {
+    .footer__container {
+      max-width: 64rem;
     }
   }
 </style>
-<footer class="bg-primary-800 white">
-  <div class="mw8 center pv4 ph4">
-    <div class="flex-l items-center justify-between">
-      <div>
-        <span>HappyRoll</span>
-        <span class="db f7 pt2 primary-300"
-          >All Rights Reserved HappyRoll, Inc. <span class="js-copyright"
-          ></span></span
+
+<footer
+  class="footer bg-neutral-900 pt5 pb3 ph3 flex flex-column justify-between w-100"
+>
+  <div class="footer__container flex flex-column center w-100">
+    <div class="footer__top-row">
+      <div class="w-70 mw5">
+        <a
+          href="/"
+          class="logo flex items-center"
+          aria-label="Back to homepage"
         >
+          <img
+            src="/images/happyroll-white-logo.svg"
+            width="150"
+            height="46.5"
+            alt="HappyRoll Smiling H logo in white."
+            class="h-100 w-100"
+          />
+        </a>
+      </div>
+    </div>
+    <div class="footer__bottom-row flex-l flex-wrap justify-between">
+      <div class="footer__bottom-row--left">
+        <div class="social-links flex">
+          <div
+            class="social-links__icon ba br3 bw1 pa2 flex items-center justify-center dim"
+          >
+            <a href="" class="link"
+              ><i class="bi bi-dribbble white f3 flex"></i></a
+            >
+          </div>
+          <div
+            class="social-links__icon ba br3 bw1 pa2 flex items-center justify-center dim"
+          >
+            <a href="" class="link"
+              ><i class="bi bi-twitter-x white f3 flex"></i></a
+            >
+          </div>
+          <div
+            class="social-links__icon ba br3 bw1 pa2 flex items-center justify-center dim"
+          >
+            <a href="" class="link"
+              ><i class="bi bi-linkedin white f3 flex"></i></a
+            >
+          </div>
+        </div>
+
+        <address class="fs-normal pt4">
+          <a href="tel:(954) 903-7093" class="link white f4 db"
+            >(954) 903-7093</a
+          >
+          <a href="mailto:team@myhappyroll.com" class="link white f4 db pt2"
+            >team@myhappyroll.com</a
+          >
+        </address>
+      </div>
+      <div class="footer__bottom-row--right pt4 pt5-ns pt0-l w-60-l">
+        <nav class="flex flex-column justify-between">
+          <ul class="list pl0 flex flex-column mb0 w-25-l mt0-ns">
+            <li>
+              <a href="/pricing/" class="neutral-200 link dim">Pricing</a>
+            </li>
+            <li>
+              <a href="/about/" class="neutral-200 link dim">About</a>
+            </li>
+            <li>
+              <a href="/gallery/" class="neutral-200 link dim">Gallery</a>
+            </li>
+            <li>
+              <a href="/blog/" class="neutral-200 link dim">Blog</a>
+            </li>
+          </ul>
+
+          <ul class="list pl0 flex flex-column mt0 w-25-l">
+            <li>
+              <a href="/privacy-policy/" class="neutral-200 link dim"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a href="/terms-of-service/" class="neutral-200 link dim"
+                >Terms of Service</a
+              >
+            </li>
+          </ul>
+
+          <div class="w-25-l flex justify-end-l">
+            <Button isTransparentButton href="/#book-a-call">Book a call</Button
+            >
+          </div>
+        </nav>
       </div>
     </div>
   </div>
-</footer>
 
-<script>
-  const tag = document.querySelector(".js-copyright");
-  if (tag) {
-    tag.innerHTML = String(new Date().getFullYear());
-  }
-</script>
+  <p class="tc neutral-300">
+    &copy; {currentYear} HappyRoll, Inc. All Rights Reserved. #EatMoreSushi 🍣
+  </p>
+</footer>
