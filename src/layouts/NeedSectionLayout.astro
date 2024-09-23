@@ -6,11 +6,17 @@ import Button from "../components/Button.astro";
 <style>
   #need-section {
     min-height: 480px;
+    height: 77vh;
   }
 
   @media screen and (min-width: 800px) {
     .items-start-800 {
       align-items: start;
+    }
+
+    #need-section {
+      min-height: 480px;
+      height: unset;
     }
   }
 </style>
