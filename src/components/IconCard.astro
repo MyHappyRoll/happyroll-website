@@ -1,0 +1,55 @@
+---
+const { class: className, title } = Astro.props;
+
+// const getContentClass = () => {
+//   if (!Astro.slots.has("left")) {
+//     return [];
+//   }
+
+//   return ["w-two-thirds"];
+// };
+
+// const classContainsBgColor = (classNames: string) => {
+//   if (!classNames) {
+//     return false;
+//   }
+//   const classes = classNames.split(" ");
+//   for (let i = 0; i < classes.length; i++) {
+//     if (classes[i].indexOf("bg-") === 0) {
+//       return true;
+//     }
+//   }
+//   return false;
+// };
+---
+
+<style>
+  .mobile-card {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    border-radius: 20px;
+    max-width: 450px;
+  }
+
+  @media screen and (min-width: 480px) {
+    .mobile-card {
+      border-radius: 30px;
+    }
+  }
+</style>
+
+<div
+  class=`mobile-card flex flex-column flex-row-ns w-100 ph3 pv4 center bg-white`
+>
+  <div class="mobile-card--left w-20-ns pv3-ns">
+    <div class="w3 h3 bg-neutral-100 br-100 flex items-center justify-center">
+      <slot name="icon" />
+    </div>
+  </div>
+  <div class="mobile-card--right w-80-ns pv3-ns">
+    <h3 class="f5 f3-ns lh-title neutral-800 mt0-ns fw5">
+      {`${title}`.toTitleCase()}
+    </h3>
+
+    <slot name="description" />
+  </div>
+</div>

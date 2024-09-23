@@ -1,26 +1,10 @@
 ---
 import Button from "../components/Button.astro";
-import Card from "../components/Card.astro";
+import IconCard from "../components/IconCard.astro";
 ---
 
 <style>
-  .left-box {
-    position: sticky;
-    /* offset from the sticky header.
-        /* Header height + section top-padding + section header margin */
-    top: 75px;
-    background: linear-gradient(
-      var(--neutral-200),
-      var(--neutral-200),
-      var(--neutral-200),
-      var(--neutral-200),
-      var(--neutral-200),
-      var(--neutral-200),
-      transparent
-    );
-  }
-
-  .focusable__inner {
+  /* .focusable__inner {
     transition: all 200ms ease-in-out;
     opacity: 0.5;
     transform: scale(0.9);
@@ -29,55 +13,106 @@ import Card from "../components/Card.astro";
   .focused {
     opacity: 1;
     transform: scale(1);
+  } */
+
+  .mobile-cards {
+    gap: 30px;
+  }
+
+  @media screen and (min-width: 480px) {
+    .section-headline {
+      width: 320px;
+    }
+  }
+
+  @media screen and (min-width: 960px) {
+    .left-box {
+      position: sticky;
+      /* offset from the sticky header.
+        /* Header height + section top-padding + section header margin */
+      top: 75px;
+    }
+
+    .section-headline {
+      width: unset;
+    }
   }
 </style>
 
-<section class="bg-neutral-200">
-  <div class="mw8 center relative pt4 pb5 ph4 flex flex-wrap">
-    <div class="w-50-l self-start left-box z-1 pb5">
-      <h3 class="f2">Give your sushi restaurant marketing superpowers.</h3>
-      <p>
-        Websites are only the tip of the iceberg of what we do at HappyRoll. You
-        get everything you need to attract new sushi lovers and keep them coming
-        back — all with minimal effort.
-      </p>
-      <div class="flex items-center">
-        <span class="white"
-          ><Button variant="primary" title="Book a call" /></span
+<section class="bg-neutral-100">
+  <div class="mw8 center relative pt4 pb5 ph3 ph4-l flex flex-wrap">
+    <div class="w-100 w-50-l self-start left-box z-1 pb5">
+      <div class="measure center">
+        <h2
+          class="section-headline f4 f3-ns f2-l neutral-800 lh-title fw6 tc tl-l center mh0-l ttc"
         >
-        <Button variant="minimal" title="See pricing" />
+          {"Give your sushi restaurant marketing superpowers.".toTitleCase()}
+        </h2>
+        <p class="neutral-600 lh-copy sans-serif tc tl-l">
+          Websites are only the tip of the iceberg of what we do at HappyRoll.
+          You get everything you need to attract new sushi lovers and keep them
+          coming back&mdash;all with minimal effort.
+        </p>
+        <div
+          class="pt3 flex flex-column flex-row-ns justify-center-ns justify-start-l items-center w-100"
+        >
+          <Button href="#book-a-call" isPinkButton>Book a call</Button>
+          <div class="pt2">
+            <Button href="/pricing/" isTextButton>See all features</Button>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="w-50-l mt4">
+
+    <div class="w-100 flex flex-column items-center w-50-l mt4-l">
       <div class="w-100 ml4-l mb4 js-focusable">
         <div class="focusable__inner">
-          <Card
-            title="Fully-optimized sushi restaurant website."
-            description="With nearly 60% of searches happening on mobile, your HappyRoll plan comes with a website built to get you found more often."
-          />
+          <IconCard title="Fully-optimized sushi restaurant website.">
+            <i slot="icon" class="bi bi-laptop f2 neutral-600"></i>
+            <p
+              slot="description"
+              class="neutral-600 lh-copy sans-serif mb0 f6 f5-ns"
+            >
+              With nearly 60% of searches happening on mobile, your HappyRoll
+              plan comes with a website built to get you found more often.
+            </p>
+          </IconCard>
         </div>
       </div>
       <div class="w-100 ml4-l mb4 js-focusable">
         <div class="focusable__inner">
-          <Card
-            title="Done-For-You Restaurant Social Media Management."
-            description="Boost brand awareness and engagement on social platforms. Interact with customers and build a loyal following."
-          />
+          <IconCard title="Done-for-you restaurant social media management."
+            ><i slot="icon" class="bi bi-chat-dots f2 neutral-600"></i>
+
+            <p
+              slot="description"
+              class="neutral-600 lh-copy sans-serif mb0 f6 f5-ns"
+            >
+              Boost brand awareness and engagement on social platforms. Interact
+              with customers and build a loyal following.
+            </p>
+          </IconCard>
         </div>
       </div>
       <div class="w-100 ml4-l mb4 js-focusable">
         <div class="focusable__inner">
-          <Card
-            title="Google Business Profile Management."
-            description="Improve local search visibility and attract more customers."
-          />
+          <IconCard title="Google business profile management."
+            ><i slot="icon" class="bi bi-geo-alt f2 neutral-600"></i>
+            <p
+              slot="description"
+              class="neutral-600 lh-copy sans-serif mb0 f6 f5-ns"
+            >
+              Improve local search visibility and attract more customers. Ensure
+              accurate and up-to-date information on Google.
+            </p>
+          </IconCard>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<script>
+<!-- <script>
   (function (observedElements: NodeListOf<Element>) {
     if (!observedElements.length || !observedElements[0]) {
       return;
@@ -101,4 +136,4 @@ import Card from "../components/Card.astro";
 
     observedElements.forEach((el) => observer.observe(el));
   })(document.querySelectorAll(".js-focusable"));
-</script>
+</script> -->
