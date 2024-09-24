@@ -1,11 +1,138 @@
 ---
 import { Image } from "astro:assets";
 import PageLayout from "../layouts/PageLayout.astro";
+import Button from "../components/Button.astro";
 ---
+
+<style>
+  #pricing {
+    min-height: 480px;
+  }
+
+  .pricing-card {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    border-radius: 20px;
+    max-width: 320px;
+  }
+
+  .feature-list {
+    gap: 16px;
+  }
+
+  .feature-list li {
+    gap: 10px;
+  }
+
+  @media screen and (min-width: 480px) {
+    .pricing-card {
+      border-radius: 30px;
+    }
+  }
+</style>
 
 <PageLayout
   title="Value-Driven Web Design for Sushi Restaurants | HappyRoll"
   description="Explore our value-driven plans for web design and marketing tailored to sushi restaurants. Discover the best fit for your needs."
 >
-  <main></main>
+  <main class="bg-neutral-100">
+    <section id="hero" class="hero-section pt4 pb5 ph3">
+      <div class="hero-section__content mw7 center">
+        <h1
+          class="neutral-800 f3 f2-ns f1-l lh-title mt0-l fw6 w-70-ns center tc"
+        >
+          Choose the Perfect Plan for Your Sushi Restaurant
+        </h1>
+
+        <p class="neutral-600 lh-copy sans-serif center w-70-ns w-60-l tc">
+          Find the perfect fit for your sushi restaurant with our tailored
+          pricing plans. Whether you're just starting or aiming for growth, we
+          have a plan designed to meet your needs and budget.
+        </p>
+      </div>
+    </section>
+    <section id="pricing" class="pricing-section">
+      <div class="pricing-section__container ph3 pb6">
+        <div class="pricing-cards">
+          <div
+            class="pricing-card flex flex-column w-100 ph3 pt3 pb4 center mr0-l bg-white"
+          >
+            <div class="pricing-card--top bb b--light-gray pb4">
+              <h3 class="f4 lh-title neutral-800 fw5 tc sans-serif">Starter</h3>
+              <h3 class="f1 lh-title neutral-800 mv0 fw5 tc">
+                $375 <span class="f5">/month</span>
+              </h3>
+              <small class="fineprint mt2 tc w-100 mb4 dib f6 neutral-700"
+                >+$520 setup fee</small
+              >
+              <div class="flex justify-center">
+                <Button isPinkButton href="/#book-a-call/">Book a call</Button>
+              </div>
+            </div>
+            <div class="pricing-card--bottom pv3-ns">
+              <ul
+                class="list pl0 feature-list feature-list--mobile neutral-1000 flex flex-column w-90 center"
+              >
+                <li class="flex">
+                  <i class="bi bi-check-circle-fill primary-600 f4"></i>
+                  <p class="mt0 lh-title">
+                    {
+                      "Professionally Made sushi restaurant website".toTitleCase()
+                    }
+                  </p>
+                </li>
+                <li class="flex">
+                  <i class="bi bi-check-circle-fill primary-600 f4"></i>
+                  <p class="mt0 lh-title">
+                    {"Google Business Profile Management".toTitleCase()}
+                  </p>
+                </li>
+                <li class="flex">
+                  <i class="bi bi-check-circle-fill primary-600 f4"></i>
+                  <p class="mt0 lh-title">
+                    {"Newsletter Marketing".toTitleCase()}
+                  </p>
+                </li>
+                <li class="flex">
+                  <i class="bi bi-check-circle-fill primary-600 f4"></i>
+                  <p class="mt0 lh-title">
+                    {
+                      "Dedicated Client Portal & Support Request System".toTitleCase()
+                    }
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="pricing-card flex flex-column w-100 ph3 pt3 pb4 center mr0-l bg-white"
+          >
+            <div class="pricing-card--top bb b--light-gray pb4">
+              <h3 class="f4 lh-title neutral-800 fw5 tc sans-serif">Plus</h3>
+              <h3 class="f1 lh-title neutral-800 mv0 fw5 tc">
+                $875 <span class="f5">/month</span>
+              </h3>
+              <small class="fineprint mt2 tc w-100 mb4 dib f6 neutral-700"
+                >+$1,300 setup fee</small
+              >
+              <div class="flex justify-center">
+                <Button isPinkButton href="/#book-a-call/">Book a call</Button>
+              </div>
+            </div>
+            <div class="pricing-card--bottom pv3-ns">
+              <ul
+                class="list pl0 feature-list feature-list--mobile neutral-1000 flex flex-column w-90 center"
+              >
+                <li class="flex">
+                  <i class="bi bi-check-circle-fill primary-600 f4"></i>
+                  <p class="mt0 lh-title">
+                    {"Everything in starter, plus...".toTitleCase()}
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </PageLayout>
