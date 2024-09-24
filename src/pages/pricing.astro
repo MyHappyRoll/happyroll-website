@@ -9,10 +9,25 @@ import Button from "../components/Button.astro";
     min-height: 480px;
   }
 
+  .pricing-cards {
+    gap: 20px;
+    /* When emphasizing Maki Master package as best value. */
+    /* gap: 40px; */
+  }
+
   .pricing-card {
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     border-radius: 20px;
     max-width: 320px;
+  }
+
+  .pricing-card:nth-child(2) {
+    /* To emphasize this package as best value. */
+    /* transform: scale(1.15); */
+  }
+
+  .pricing-card--top {
+    height: 283.48px;
   }
 
   .feature-list {
@@ -51,33 +66,37 @@ import Button from "../components/Button.astro";
       </div>
     </section>
     <section id="pricing" class="pricing-section">
-      <div class="pricing-section__container ph3 pb6">
-        <div class="pricing-cards">
+      <div class="pricing-section__container ph3 pt4-l pb6 mw8 center">
+        <div class="pricing-cards flex flex-column flex-row-l">
           <div
             class="pricing-card flex flex-column w-100 ph3 pt3 pb4 center mr0-l bg-white"
           >
-            <div class="pricing-card--top bb b--light-gray pb4">
-              <h3 class="f4 lh-title neutral-800 fw5 tc sans-serif">Starter</h3>
-              <h3 class="f1 lh-title neutral-800 mv0 fw5 tc">
-                $375 <span class="f5">/month</span>
-              </h3>
-              <small class="fineprint mt2 tc w-100 mb4 dib f6 neutral-700"
-                >+$520 setup fee</small
-              >
+            <div
+              class="pricing-card--top bb b--light-gray pb4 flex flex-column justify-between"
+            >
+              <div>
+                <h3 class="f4 lh-title neutral-800 fw5 tc sans-serif">
+                  Rollout
+                </h3>
+                <h3 class="f1 lh-title neutral-800 mv0 fw5 tc">
+                  $375 <span class="f5">/month</span>
+                </h3>
+                <small class="fineprint mt2 tc w-100 mb4 dib f6 neutral-700"
+                  >$520 setup fee</small
+                >
+              </div>
               <div class="flex justify-center">
                 <Button isPinkButton href="/#book-a-call/">Book a call</Button>
               </div>
             </div>
-            <div class="pricing-card--bottom pv3-ns">
+            <div class="pricing-card--bottom pv3">
               <ul
                 class="list pl0 feature-list feature-list--mobile neutral-1000 flex flex-column w-90 center"
               >
                 <li class="flex">
                   <i class="bi bi-check-circle-fill primary-600 f4"></i>
                   <p class="mt0 lh-title">
-                    {
-                      "Professionally Made sushi restaurant website".toTitleCase()
-                    }
+                    {"Professional Sushi restaurant website".toTitleCase()}
                   </p>
                 </li>
                 <li class="flex">
@@ -89,15 +108,13 @@ import Button from "../components/Button.astro";
                 <li class="flex">
                   <i class="bi bi-check-circle-fill primary-600 f4"></i>
                   <p class="mt0 lh-title">
-                    {"Newsletter Marketing".toTitleCase()}
+                    {"Promotional Newsletter Marketing".toTitleCase()}
                   </p>
                 </li>
                 <li class="flex">
                   <i class="bi bi-check-circle-fill primary-600 f4"></i>
                   <p class="mt0 lh-title">
-                    {
-                      "Dedicated Client Portal & Support Request System".toTitleCase()
-                    }
+                    {"Dedicated Client Portal & Support System".toTitleCase()}
                   </p>
                 </li>
               </ul>
@@ -107,25 +124,105 @@ import Button from "../components/Button.astro";
             class="pricing-card flex flex-column w-100 ph3 pt3 pb4 center mr0-l bg-white"
           >
             <div class="pricing-card--top bb b--light-gray pb4">
-              <h3 class="f4 lh-title neutral-800 fw5 tc sans-serif">Plus</h3>
-              <h3 class="f1 lh-title neutral-800 mv0 fw5 tc">
-                $875 <span class="f5">/month</span>
-              </h3>
-              <small class="fineprint mt2 tc w-100 mb4 dib f6 neutral-700"
-                >+$1,300 setup fee</small
-              >
+              <div class="flex flex-column justify-between">
+                <h3 class="f4 lh-title neutral-800 fw5 tc sans-serif">
+                  Maki Master
+                </h3>
+                <h3 class="f1 lh-title neutral-800 mv0 fw5 tc">
+                  $875 <span class="f5">/month</span>
+                </h3>
+                <small class="fineprint mt2 tc w-100 mb0 dib f6 neutral-700"
+                  >$1,300 setup fee</small
+                >
+                <small class="fineprint mt2 tc w-100 mb4 dib f6 neutral-700"
+                  >+ Your personalized ad budget</small
+                >
+              </div>
               <div class="flex justify-center">
                 <Button isPinkButton href="/#book-a-call/">Book a call</Button>
               </div>
             </div>
-            <div class="pricing-card--bottom pv3-ns">
+            <div class="pricing-card--bottom pv3">
               <ul
                 class="list pl0 feature-list feature-list--mobile neutral-1000 flex flex-column w-90 center"
               >
                 <li class="flex">
                   <i class="bi bi-check-circle-fill primary-600 f4"></i>
                   <p class="mt0 lh-title">
-                    {"Everything in starter, plus...".toTitleCase()}
+                    {"Everything in the Rollout plan, plus...".toTitleCase()}
+                  </p>
+                </li>
+                <li class="flex">
+                  <i class="bi bi-check-circle-fill primary-600 f4"></i>
+                  <p class="mt0 lh-title">
+                    {"Reputation Management".toTitleCase()}
+                  </p>
+                </li>
+                <li class="flex">
+                  <i class="bi bi-check-circle-fill primary-600 f4"></i>
+                  <p class="mt0 lh-title">
+                    {"Google Advertising Management".toTitleCase()}
+                  </p>
+                </li>
+                <li class="flex">
+                  <i class="bi bi-check-circle-fill primary-600 f4"></i>
+                  <p class="mt0 lh-title">
+                    {"Monthly Performance Reporting".toTitleCase()}
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="pricing-card flex flex-column w-100 ph3 pt3 pb4 center mr0-l bg-white"
+          >
+            <div class="pricing-card--top bb b--light-gray pb4">
+              <div class="flex flex-column justify-between">
+                <h3 class="f4 lh-title neutral-800 fw5 tc sans-serif">
+                  Sushi Supreme
+                </h3>
+                <h3 class="f1 lh-title neutral-800 mv0 fw5 tc">
+                  $1,350 <span class="f5">/month</span>
+                </h3>
+                <small class="fineprint mt2 tc w-100 mb0 dib f6 neutral-700"
+                  >$3,200 setup fee</small
+                >
+                <small class="fineprint mt2 tc w-100 mb4 dib f6 neutral-700"
+                  >+ Your personalized ad budget</small
+                >
+              </div>
+              <div class="flex justify-center">
+                <Button isPinkButton href="/#book-a-call/">Book a call</Button>
+              </div>
+            </div>
+            <div class="pricing-card--bottom pv3">
+              <ul
+                class="list pl0 feature-list feature-list--mobile neutral-1000 flex flex-column w-90 center"
+              >
+                <li class="flex">
+                  <i class="bi bi-check-circle-fill primary-600 f4"></i>
+                  <p class="mt0 lh-title">
+                    {
+                      "Everything in the Maki Master plan, plus...".toTitleCase()
+                    }
+                  </p>
+                </li>
+                <li class="flex">
+                  <i class="bi bi-check-circle-fill primary-600 f4"></i>
+                  <p class="mt0 lh-title">
+                    {"Search Engine Optimization (SEO)".toTitleCase()}
+                  </p>
+                </li>
+                <li class="flex">
+                  <i class="bi bi-check-circle-fill primary-600 f4"></i>
+                  <p class="mt0 lh-title">
+                    {"Branded Customer Loyalty App".toTitleCase()}
+                  </p>
+                </li>
+                <li class="flex">
+                  <i class="bi bi-check-circle-fill primary-600 f4"></i>
+                  <p class="mt0 lh-title">
+                    {"20% Discount on Future HappyRoll Add-Ons".toTitleCase()}
                   </p>
                 </li>
               </ul>
