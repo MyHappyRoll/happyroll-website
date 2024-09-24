@@ -2,6 +2,8 @@
 import { Image } from "astro:assets";
 import PageLayout from "../layouts/PageLayout.astro";
 import Button from "../components/Button.astro";
+
+// TODO: Add explainer content for all ? icons. Consider adding video explainers à la Ahrefs.
 ---
 
 <style>
@@ -38,9 +40,85 @@ import Button from "../components/Button.astro";
     gap: 10px;
   }
 
+  .pricing-table__features-headings {
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  }
+
+  .pricing-table__features {
+    /* gap: 32px; */
+  }
+
+  .pricing-table__feature:hover {
+    background-color: var(--neutral-100);
+    transition: 250ms;
+    i {
+      opacity: 0.6;
+      transition: 250ms;
+    }
+  }
+
+  .pricing-table__comparison-table {
+    display: none;
+  }
+
+  .pricing-table__plans {
+    width: 23.33%;
+    height: 1340px;
+    box-shadow: rgba(0, 0, 0, 0.05) 1px 1px 1px 0px;
+  }
+
+  .pricing-table__plans--left {
+    border-top-left-radius: 30px;
+  }
+
+  .pricing-table__plans--right {
+    border-top-right-radius: 30px;
+  }
+
+  .pricing-table__plans--last {
+    border-bottom-right-radius: 30px;
+  }
+
+  .pricing-table__spacer {
+    height: 20px;
+  }
+
+  .bi-check-lg {
+    position: relative;
+    top: -9px;
+  }
+
+  .h-72 {
+    height: 72px;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+
   @media screen and (min-width: 480px) {
     .pricing-card {
       border-radius: 30px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .pricing-table__comparison-table {
+      display: flex;
+    }
+
+    .db-1024 {
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: 1060px) {
+    .pricing-section__container {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 </style>
@@ -86,7 +164,7 @@ import Button from "../components/Button.astro";
                 >
               </div>
               <div class="flex justify-center">
-                <Button isPinkButton href="/#book-a-call/">Book a call</Button>
+                <Button isPinkButton href="/#book-a-call">Book a call</Button>
               </div>
             </div>
             <div class="pricing-card--bottom pv3">
@@ -139,7 +217,7 @@ import Button from "../components/Button.astro";
                 >
               </div>
               <div class="flex justify-center">
-                <Button isPinkButton href="/#book-a-call/">Book a call</Button>
+                <Button isPinkButton href="/#book-a-call">Book a call</Button>
               </div>
             </div>
             <div class="pricing-card--bottom pv3">
@@ -192,7 +270,7 @@ import Button from "../components/Button.astro";
                 >
               </div>
               <div class="flex justify-center">
-                <Button isPinkButton href="/#book-a-call/">Book a call</Button>
+                <Button isPinkButton href="/#book-a-call">Book a call</Button>
               </div>
             </div>
             <div class="pricing-card--bottom pv3">
@@ -226,6 +304,626 @@ import Button from "../components/Button.astro";
                   </p>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+        <div class="pricing-table pt6 dn db-1024">
+          <h2 class="f2 neutral-800 lh-title fw6 tc pb3">
+            {"Compare full plans & features".toTitleCase()}
+          </h2>
+          <div class="pricing-table__comparison-table pt3 items-end">
+            <div class="pricing-table__features-headings w-30 bg-white pv3">
+              <div>
+                <h3 class="f5 lh-title neutral-800 sans-serif ph3">
+                  {"Sushi restaurant website".toTitleCase()}
+                </h3>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li class="pricing-table__feature flex items-center pa3">
+                    <p class="lh-title sans-serif neutral-800 mv0">
+                      {"Mobile-Optimized Website".toTitleCase()}
+                    </p>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-between pa3"
+                  >
+                    <p class="lh-title sans-serif neutral-800 mv0">
+                      {"HTML menus".toTitleCase()}
+                    </p>
+                    <i
+                      class="bi bi-question-circle f6 neutral-900 flex items-center hidden pointer"
+                    ></i>
+                  </li>
+                  <li class="pricing-table__feature flex items-center pa3">
+                    <p class="lh-title sans-serif neutral-800 mv0">
+                      {"Fast Loading Speed".toTitleCase()}
+                    </p>
+                  </li>
+                  <li class="pricing-table__feature flex items-center pa3">
+                    <p class="lh-title sans-serif neutral-800 mv0">
+                      {"Secure Web Hosting".toTitleCase()}
+                    </p>
+                  </li>
+                  <li class="pricing-table__feature flex items-center pa3">
+                    <p class="lh-title sans-serif neutral-800 mv0">
+                      {"Custom Design to Fit Your Brand".toTitleCase()}
+                    </p>
+                  </li>
+                  <li class="pricing-table__feature flex items-center pa3">
+                    <p class="lh-title sans-serif neutral-800 mv0">
+                      {"Optimized for Search Engines".toTitleCase()}
+                    </p>
+                  </li>
+                  <li class="pricing-table__feature flex items-center pa3">
+                    <p class="lh-title sans-serif neutral-800 mv0">
+                      {
+                        "Content Management System (CMS) for Menus & Blog".toTitleCase()
+                      }
+                    </p>
+                  </li>
+                  <li class="pricing-table__feature flex items-center pa3">
+                    <p class="lh-title sans-serif neutral-800 mv0">
+                      {"SEO copywriting for up to 10 pages".toTitleCase()}
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="f5 lh-title neutral-800 sans-serif ph3">
+                  {"HappyRoll account".toTitleCase()}
+                </h3>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li class="pricing-table__feature flex items-center pa3">
+                    <p class="lh-title sans-serif neutral-800 mv0">
+                      {
+                        "Dedicated Client Portal for Support Requests".toTitleCase()
+                      }
+                    </p>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-between pa3"
+                  >
+                    <p class="lh-title sans-serif neutral-800 mv0">
+                      {"Website Managed by HappyRoll Team".toTitleCase()}
+                    </p>
+                    <i
+                      class="bi bi-question-circle f6 neutral-900 flex items-center hidden pointer"
+                    ></i>
+                  </li>
+                  <li class="pricing-table__feature flex items-center pa3">
+                    <p class="lh-title sans-serif neutral-800 mv0">
+                      {"Comprehensive Marketing Management".toTitleCase()}
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="f5 lh-title neutral-800 sans-serif ph3">
+                  {"Paid traffic management".toTitleCase()}
+                </h3>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li class="pricing-table__feature flex items-center pa3">
+                    <p class="lh-title sans-serif neutral-800 mv0">
+                      {"Google Ads".toTitleCase()}
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="f5 lh-title neutral-800 sans-serif ph3">
+                  {"Search Engine Optimization (SEO)".toTitleCase()}
+                </h3>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li class="pricing-table__feature flex items-center pa3">
+                    <p class="lh-title sans-serif neutral-800 mv0">
+                      {"Level 1 SEO".toTitleCase()}
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="f5 lh-title neutral-800 sans-serif ph3">
+                  {"Customer Loyalty".toTitleCase()}
+                </h3>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li class="pricing-table__feature flex items-center pa3">
+                    <p class="lh-title sans-serif neutral-800 mv0">
+                      {"Done-for-you offer management system".toTitleCase()}
+                    </p>
+                    <i
+                      class="bi bi-question-circle f6 neutral-900 flex items-center hidden pointer"
+                    ></i>
+                  </li>
+                  <li class="pricing-table__feature flex items-center pa3">
+                    <p class="lh-title sans-serif neutral-800 mv0">
+                      {"Customer Loyalty App".toTitleCase()}
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="f5 lh-title neutral-800 sans-serif ph3">
+                  {"Email Marketing".toTitleCase()}
+                </h3>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li class="pricing-table__feature flex items-center pa3">
+                    <p class="lh-title sans-serif neutral-800 mv0">
+                      {"Promotional Newsletter Marketing".toTitleCase()}
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Column 1 -->
+            <div
+              class="pricing-table__plans pricing-table__plans--left bg-white pb3 bl b--light-gray"
+            >
+              <div
+                class="pricing-table__plans--top pricing-table__plans--left h3 bb bt b--light-gray flex items-center justify-center"
+              >
+                <h3 class="f5 lh-title neutral-800 sans-serif ph3 tc">
+                  {"Rollout Plan".toTitleCase()}
+                </h3>
+              </div>
+              <div class="pt3">
+                <div class="pricing-table__spacer mv3 bg-neutral-100"></div>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3 h-72"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i
+                      class="bi bi-check-lg flex items-center f2 primary-600 hidden"
+                    ></i>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="pricing-table__spacer mv3 bg-neutral-100"></div>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3 h-72"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3 h-72"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3 h-72"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="pricing-table__spacer mv3 bg-neutral-100"></div>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i
+                      class="bi bi-check-lg flex items-center f2 primary-600 hidden"
+                    ></i>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="pricing-table__spacer mv3 bg-neutral-100"></div>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i
+                      class="bi bi-check-lg flex items-center f2 primary-600 hidden"
+                    ></i>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="pricing-table__spacer mv3 bg-neutral-100"></div>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3 h-72"
+                  >
+                    <i
+                      class="bi bi-check-lg flex items-center f2 primary-600 hidden"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i
+                      class="bi bi-check-lg flex items-center f2 primary-600 hidden"
+                    ></i>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="pricing-table__spacer mv3 bg-neutral-100"></div>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="pricing-table__plans bg-white pb3 bl br b--light-gray">
+              <div
+                class="pricing-table__plans--top h3 bb bt b--light-gray flex items-center justify-center"
+              >
+                <h3 class="f5 lh-title neutral-800 sans-serif ph3 tc">
+                  {"Maki Master Plan".toTitleCase()}
+                </h3>
+              </div>
+              <div class="pt3">
+                <div class="pricing-table__spacer mv3 bg-neutral-100"></div>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3 h-72"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i
+                      class="bi bi-check-lg flex items-center f2 primary-600 hidden"
+                    ></i>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="pricing-table__spacer mv3 bg-neutral-100"></div>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3 h-72"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3 h-72"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3 h-72"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="pricing-table__spacer mv3 bg-neutral-100"></div>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="pricing-table__spacer mv3 bg-neutral-100"></div>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i
+                      class="bi bi-check-lg flex items-center f2 primary-600 hidden"
+                    ></i>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="pricing-table__spacer mv3 bg-neutral-100"></div>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3 h-72"
+                  >
+                    <i
+                      class="bi bi-check-lg flex items-center f2 primary-600 hidden"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i
+                      class="bi bi-check-lg flex items-center f2 primary-600 hidden"
+                    ></i>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="pricing-table__spacer mv3 bg-neutral-100"></div>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- 3 -->
+            <div
+              class="pricing-table__plans pricing-table__plans--right pricing-table__plans--last bg-white pb3 b--light-gray"
+            >
+              <div
+                class="pricing-table__plans--top pricing-table__plans--right h3 bb bt b--light-gray flex items-center justify-center"
+              >
+                <h3 class="f5 lh-title neutral-800 sans-serif ph3 tc">
+                  {"Sushi Supreme Plan".toTitleCase()}
+                </h3>
+              </div>
+              <div class="pt3">
+                <div class="pricing-table__spacer mv3 bg-neutral-100"></div>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3 h-72"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="pricing-table__spacer mv3 bg-neutral-100"></div>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3 h-72"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3 h-72"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3 h-72"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="pricing-table__spacer mv3 bg-neutral-100"></div>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="pricing-table__spacer mv3 bg-neutral-100"></div>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="pricing-table__spacer mv3 bg-neutral-100"></div>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3 h-72"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="pricing-table__spacer mv3 bg-neutral-100"></div>
+                <ul
+                  class="list pl0 pricing-table__features neutral-1000 flex flex-column mv0"
+                >
+                  <li
+                    class="pricing-table__feature flex items-center justify-center pt3"
+                  >
+                    <i class="bi bi-check-lg flex items-center f2 primary-600"
+                    ></i>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
