@@ -1,11 +1,224 @@
 ---
 import { Image } from "astro:assets";
 import PageLayout from "../layouts/PageLayout.astro";
+import Button from "../components/Button.astro";
+import glovedHandsMakingSushiRoll from "../images/gloved-hands-making-sushi-roll.jpg";
+import handsWithChopsticksGrabbingSushi from "../images/hands-with-chopsticks-grabbing-sushi.jpg";
+import platedSushiOnDinnerTable from "../images/plated-sushi-on-dinner-table.jpg";
 ---
+
+<style>
+  .hero-section__container {
+    gap: 16px;
+  }
+
+  .solution-section__container {
+    gap: 40px;
+  }
+
+  .logo-grid {
+    gap: 45px;
+  }
+
+  .button-group {
+    width: fit-content;
+  }
+
+  .image-collage {
+    gap: 20px;
+  }
+
+  .image-collage img {
+    border-radius: 1rem;
+  }
+
+  .image-collage img:first-of-type {
+    transform: rotate(-10deg);
+  }
+
+  .image-collage img:nth-child(2) {
+    transform: rotate(10deg);
+  }
+
+  .image-collage img:nth-child(3) {
+    transform: rotate(-10deg);
+  }
+
+  @media screen and (min-width: 960px) {
+    .proof-section__columns {
+      gap: 60px;
+    }
+  }
+</style>
 
 <PageLayout
   title="Sushi Restaurant Web Design Experts | About Us | HappyRoll"
   description="Learn more about HappyRoll and our mission to help sushi restaurants succeed online with top-notch web design and marketing."
 >
-  <main></main>
+  <main class="bg-neutral-100">
+    <section id="hero-section" class="hero-section">
+      <div class="hero-section__container pv4 ph3 center flex-l mw8 pv6-l">
+        <h1
+          class="neutral-800 f3 f2-ns lh-title mt0-l fw6 mw6 w-50-l mw-none-l center tc tl-l"
+        >
+          Transform Your Sushi Restaurant's Success with HappyRoll
+        </h1>
+
+        <p
+          class="neutral-600 lh-copy sans-serif center measure-wide mw-none-l tc w-50-l tl-l mt0-l"
+        >
+          Running a sushi restaurant is challenging—standing out in a crowded
+          market, attracting diners, and ensuring your online presence truly
+          reflects the quality of your food. You need more than just a website;
+          you need a partner who understands the unique demands of your business
+          and can help you succeed.
+        </p>
+      </div>
+    </section>
+    <section id="solution-section" class="solution-section">
+      <div
+        class="solution-section__container pt4 pb5 ph3 flex flex-column flex-row-l mw8 center pb6-l"
+      >
+        <div class="mw6 center">
+          <img
+            src="/images/sushi-chefs-working.webp"
+            alt="Sushi chefs rolling sushi."
+            width="268"
+            height="178.7"
+            class="br4 w-100 h-100"
+          />
+        </div>
+        <div class="solution-section__left-column mw6 center">
+          <h2 class="f4 f3-ns f2-l neutral-800 lh-title fw6">
+            {"Why HappyRoll?".toTitleCase()}
+          </h2>
+
+          <p class="neutral-600 lh-copy sans-serif">
+            At HappyRoll, we specialize in providing sushi restaurants with
+            top-tier digital marketing solutions that drive real results. Our
+            team of experienced developers and marketers knows the ins and outs
+            of the restaurant industry.
+          </p>
+          <p class="neutral-600 lh-copy sans-serif">
+            We've crafted a complete, tailored product that includes custom
+            website design, advertising management, Google Business Profile
+            optimization, and much more—all designed to bring more diners to
+            your door.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="proof-section" class="proof-section bg-neutral-800">
+      <div class="proof-section__container pv5 pv6-l ph3">
+        <h2 class="f3 f2-ns w-40-ns white lh-title fw6 tc center pb4-l">
+          {"Trusted by brands big & small".toTitleCase()}
+        </h2>
+        <div class="proof-section__columns pv4 flex-l mw8 center">
+          <div class="measure center mw-none-l w-50-l">
+            <h3 class="f5 f4-ns white lh-title fw6">
+              {"Years of Expertise, Now Focused on Your Success".toTitleCase()}
+            </h3>
+            <p class="neutral-300 lh-copy sans-serif">
+              At HappyRoll, our team has had the privilege of developing
+              software and marketing solutions for major national brands, and
+              local restaurants, including Zumba, Vimeo, Sushi Song, and Thai
+              Song.
+            </p>
+            <p class="neutral-300 lh-copy sans-serif">
+              We're now channeling our years of experience into helping sushi
+              restaurants like yours achieve growth and success. Whether you're
+              a small local spot or aiming for broader recognition, our
+              expertise is your advantage.
+            </p>
+          </div>
+          <div
+            class="logo-grid measure center mw-none-l w-100 w-50-l flex flex-column flex-row-l flex-wrap-l items-center justify-between pt4"
+          >
+            <div class="flex justify-center w-100 w-40-l">
+              <img
+                src="/images/vimeo-logo-white.svg"
+                alt="Vimeo logo"
+                width="180"
+                height="50.9"
+              />
+            </div>
+            <div class="flex justify-center w-100 w-40-l">
+              <img
+                src="/images/sushi-song-logo.svg"
+                alt="Sushi Song logo"
+                width="180"
+                height="37.7"
+              />
+            </div>
+            <div class="flex justify-center w-100 w-40-l">
+              <img
+                src="/images/zumba-logo.webp"
+                alt="Zumba logo"
+                width="180"
+                height="45.2"
+              />
+            </div>
+            <div class="flex justify-center w-100 w-40-l">
+              <img
+                src="/images/thai-song-full-logo.svg"
+                alt="Thai Song by The Sea logo"
+                width="90"
+                height="109.9"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="action-section" class="action-section bg-primary-600">
+      <div class="action-section__container pv5 pv6-l ph3">
+        <div class="center mw7-l">
+          <h3
+            class="f2 f1-l white lh-title fw6 tc mt1 mw6 center mw-none-l w-80-l"
+          >
+            {"Ready to Transform Your Sushi Restaurant?".toTitleCase()}
+          </h3>
+          <div class="center measure">
+            <p class="white tc lh-copy sans-serif center w-70-ns f4-l">
+              Let's make your restaurant the go-to sushi spot in your area.
+            </p>
+
+            <div class="button-group pt3 pb4 flex center">
+              <div>
+                <Button href="/#book-a-call" isTransparentButton
+                  >Get started</Button
+                >
+              </div>
+              <div>
+                <Button href="/pricing/" isWhiteTextButton>View features</Button
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="image-collage pv4 pt5-l flex flex-column flex-row-l justify-center items-center"
+        >
+          <Image
+            src={glovedHandsMakingSushiRoll}
+            alt="Gloved hands making sushi roll."
+            width="268"
+            height="178.7"
+          />
+          <Image
+            src={handsWithChopsticksGrabbingSushi}
+            alt="Hands with chopsticks grabbing sushi."
+            width="268"
+            height="178.7"
+          />
+          <Image
+            src={platedSushiOnDinnerTable}
+            alt="Plated sushi on dinner table."
+            width="268"
+            height="178.7"
+          />
+        </div>
+      </div>
+    </section>
+  </main>
 </PageLayout>

@@ -99,6 +99,17 @@ import Button from "../components/Button.astro";
     visibility: hidden;
   }
 
+  .tooltip-container__tooltip {
+    display: none;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  }
+
+  .tooltip-container:hover {
+    .tooltip-container__tooltip {
+      display: block;
+    }
+  }
+
   @media screen and (min-width: 480px) {
     .pricing-card {
       border-radius: 30px;
@@ -331,9 +342,23 @@ import Button from "../components/Button.astro";
                     <p class="lh-title sans-serif neutral-800 mv0">
                       {"HTML menus".toTitleCase()}
                     </p>
-                    <i
-                      class="bi bi-question-circle f6 neutral-900 flex items-center hidden pointer"
-                    ></i>
+                    <div class="tooltip-container relative">
+                      <i
+                        class="bi bi-question-circle f6 neutral-900 flex items-center o-0 pointer"
+                      >
+                      </i>
+
+                      <div
+                        class="tooltip-container__tooltip absolute w5 pa3 bg-neutral-100 top-0 left-1 z-5 br4"
+                      >
+                        <p class="neutral-600 lh-copy sans-serif mv0">
+                          Ensure your online menu is easy to browse and search
+                          engine-friendly with HTML, making it simpler for
+                          customers to find what they want and helping your
+                          restaurant rank higher in search results.
+                        </p>
+                      </div>
+                    </div>
                   </li>
                   <li class="pricing-table__feature flex items-center pa3">
                     <p class="lh-title sans-serif neutral-800 mv0">
@@ -389,14 +414,43 @@ import Button from "../components/Button.astro";
                     <p class="lh-title sans-serif neutral-800 mv0">
                       {"Website Managed by HappyRoll Team".toTitleCase()}
                     </p>
-                    <i
-                      class="bi bi-question-circle f6 neutral-900 flex items-center hidden pointer"
-                    ></i>
+                    <div class="tooltip-container relative">
+                      <i
+                        class="bi bi-question-circle f6 neutral-900 flex items-center o-0 pointer"
+                      >
+                      </i>
+
+                      <div
+                        class="tooltip-container__tooltip absolute w5 pa3 bg-neutral-100 top-0 left-1 z-5 br4"
+                      >
+                        <p class="neutral-600 lh-copy sans-serif mv0">
+                          Focus on your business while we handle all website
+                          updates and maintenance, ensuring your site stays
+                          optimized and running smoothly.
+                        </p>
+                      </div>
+                    </div>
                   </li>
                   <li class="pricing-table__feature flex items-center pa3">
                     <p class="lh-title sans-serif neutral-800 mv0">
                       {"Comprehensive Marketing Management".toTitleCase()}
                     </p>
+                    <div class="tooltip-container relative">
+                      <i
+                        class="bi bi-question-circle f6 neutral-900 flex items-center o-0 pointer"
+                      >
+                      </i>
+
+                      <div
+                        class="tooltip-container__tooltip absolute w5 pa3 bg-neutral-100 top-0 left-1 z-5 br4"
+                      >
+                        <p class="neutral-600 lh-copy sans-serif mv0">
+                          Get full-service marketing, including email marketing,
+                          SEO, and paid ads, all handled by our expert team to
+                          drive maximum growth for your restaurant.
+                        </p>
+                      </div>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -439,9 +493,22 @@ import Button from "../components/Button.astro";
                     <p class="lh-title sans-serif neutral-800 mv0">
                       {"Done-for-you offer management system".toTitleCase()}
                     </p>
-                    <i
-                      class="bi bi-question-circle f6 neutral-900 flex items-center hidden pointer"
-                    ></i>
+                    <div class="tooltip-container relative">
+                      <i
+                        class="bi bi-question-circle f6 neutral-900 flex items-center o-0 pointer"
+                      >
+                      </i>
+
+                      <div
+                        class="tooltip-container__tooltip absolute w5 pa3 bg-neutral-100 top-0 left-1 z-5 br4"
+                      >
+                        <p class="neutral-600 lh-copy sans-serif mv0">
+                          Simply submit your offers, and we'll take care of the
+                          rest, ensuring timely promotions that drive repeat
+                          business and customer engagement.
+                        </p>
+                      </div>
+                    </div>
                   </li>
                   <li class="pricing-table__feature flex items-center pa3">
                     <p class="lh-title sans-serif neutral-800 mv0">

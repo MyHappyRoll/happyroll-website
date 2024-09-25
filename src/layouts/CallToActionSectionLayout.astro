@@ -40,6 +40,10 @@
     gap: 25px;
   }
 
+  input[type="submit"] {
+    height: 60px;
+  }
+
   @media screen and (min-width: 480px) {
     .form__input-group {
       gap: 0px;
@@ -58,7 +62,7 @@
   }
 </style>
 
-<section id="book-a-call" class="fw bg-primary-700 white section pb5">
+<section id="book-a-call" class="fw bg-primary-600 white section pb5">
   <div
     class="section__container mw8 center ph3 ph4-ns pv4 pt5-ns pb6 flex flex-column flex-row-l relative"
   >
@@ -120,7 +124,7 @@
             class="form__input-group flex flex-column flex-row-ns justify-between"
           >
             <div class="form__input flex flex-column">
-              <label for="first-name" class="o-90 pb2">First name</label>
+              <label for="first-name" class="pb2">First name</label>
               <input
                 type="text"
                 name="First Name"
@@ -130,7 +134,7 @@
               />
             </div>
             <div class="form__input flex flex-column">
-              <label for="last-name" class="o-90 pb2">Last name</label>
+              <label for="last-name" class="pb2">Last name</label>
               <input
                 type="text"
                 name="Last Name"
@@ -141,7 +145,7 @@
             </div>
           </div>
           <div class="form__input flex flex-column">
-            <label for="email" class="o-90 pb2">Email address</label>
+            <label for="email" class="pb2">Email address</label>
             <input
               type="email"
               name="Email Address"
@@ -154,9 +158,7 @@
             class="form__input-group flex flex-column flex-row-ns justify-between"
           >
             <div class="form__input flex flex-column">
-              <label for="restaurant-name" class="o-90 pb2"
-                >Restaurant name</label
-              >
+              <label for="restaurant-name" class="pb2">Restaurant name</label>
               <input
                 type="text"
                 name="Restaurant Name"
@@ -166,7 +168,7 @@
               />
             </div>
             <div class="form__input flex flex-column">
-              <label for="restaurant-website" class="o-90 pb2"
+              <label for="restaurant-website" class="pb2"
                 >Restaurant website</label
               >
               <input
@@ -181,26 +183,26 @@
             class="form__input-group flex flex-column flex-row-ns justify-between"
           >
             <div class="form__input flex flex-column">
-              <label for="preferred-date" class="o-90 pb2"
+              <label for="preferred-date" class="pb2"
                 >Preferred date for consultation</label
               >
               <input
                 type="date"
                 name="Preferred Date for Consultation"
                 id="preferred-date"
-                class="bg-transparent ba bw1 br-pill b--primary-400 white o-90"
+                class="bg-transparent ba bw1 br-pill b--primary-400 white"
                 required
               />
             </div>
             <div class="form__input flex flex-column">
-              <label for="preferred-time" class="o-90 pb2"
+              <label for="preferred-time" class="pb2"
                 >Preferred time for consultation</label
               >
               <input
                 type="time"
                 name="Preferred Time for Consultation"
                 id="preferred-time"
-                class="bg-transparent ba bw1 br-pill b--primary-400 white o-90"
+                class="bg-transparent ba bw1 br-pill b--primary-400 white"
                 required
               />
             </div>
@@ -209,11 +211,11 @@
             class="form__input-group flex flex-column flex-row-ns justify-between"
           >
             <div class="form__input flex flex-column">
-              <label for="timezone" class="o-90 pb2">Timezone</label>
+              <label for="timezone" class="pb2">Timezone</label>
               <select
                 name="Timezone"
                 id="timezone"
-                class="bg-transparent ba bw1 br-pill b--primary-400 white o-90"
+                class="bg-transparent ba bw1 br-pill b--primary-400 white"
                 required
               >
                 <option value="">Select a timezone</option>
@@ -224,13 +226,11 @@
               </select>
             </div>
             <div class="form__input flex flex-column">
-              <label for="referrer" class="o-90 pb2"
-                >How'd you hear about us?</label
-              >
+              <label for="referrer" class="pb2">How'd you hear about us?</label>
               <select
                 name="How Did You Hear About Us?"
                 id="referrer"
-                class="bg-transparent ba bw1 br-pill b--primary-400 white o-90"
+                class="bg-transparent ba bw1 br-pill b--primary-400 white"
               >
                 <option value="">Choose an option</option>
                 <option value="Google Search">Google Search</option>
@@ -241,7 +241,7 @@
             </div>
           </div>
           <div class="form__input flex flex-column pt3-ns">
-            <label for="challenges-and-goals" class="o-90 pb2"
+            <label for="challenges-and-goals" class="pb2"
               >Marketing challenges or goals?</label
             >
             <textarea
@@ -253,7 +253,7 @@
           <input
             type="submit"
             value="Get your free consultation"
-            class="white bg-primary-700 ba bw1 b--white br-pill dim mt3-ns"
+            class="white bg-primary-600 ba bw1 b--white br-pill dim mt3-ns"
           />
         </form>
       </div>
