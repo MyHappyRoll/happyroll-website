@@ -5,6 +5,7 @@ const {
   isPinkButton,
   isTransparentButton,
   isTextButton,
+  isWhiteTextButton,
   isDarkTransparentButton,
 } = Astro.props;
 ---
@@ -46,6 +47,9 @@ const {
     { bw1: isDarkTransparentButton },
     { "br-pill": isDarkTransparentButton },
     { "neutral-800": isDarkTransparentButton },
+    { white: isWhiteTextButton },
+    { "button--white-text": isWhiteTextButton },
+    { dim: isWhiteTextButton },
   ]}
 >
   <slot />
