@@ -3,6 +3,10 @@ import Button from "../components/Button.astro";
 ---
 
 <style>
+  .hero-section {
+    padding-top: 6rem;
+  }
+
   .hero-section__container {
     gap: 60px;
   }
@@ -16,7 +20,7 @@ import Button from "../components/Button.astro";
     max-width: 390px;
   }
 
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 30rem) {
     .hero-section__container {
       gap: 60px;
     }
@@ -27,7 +31,7 @@ import Button from "../components/Button.astro";
     }
   }
 
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 30rem) {
     .hero-section__container {
       height: 646px;
       gap: 40px;
@@ -38,10 +42,9 @@ import Button from "../components/Button.astro";
     }
   }
 
-  @media screen and (min-width: 1060px) {
-    .hero-section__container {
-      padding-left: 0;
-      padding-right: 0;
+  @media screen and (min-width: 60rem) {
+    .hero-section {
+      padding-top: 0rem;
     }
   }
 </style>

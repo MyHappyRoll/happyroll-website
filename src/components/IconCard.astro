@@ -1,26 +1,5 @@
 ---
 const { class: className, title } = Astro.props;
-
-// const getContentClass = () => {
-//   if (!Astro.slots.has("left")) {
-//     return [];
-//   }
-
-//   return ["w-two-thirds"];
-// };
-
-// const classContainsBgColor = (classNames: string) => {
-//   if (!classNames) {
-//     return false;
-//   }
-//   const classes = classNames.split(" ");
-//   for (let i = 0; i < classes.length; i++) {
-//     if (classes[i].indexOf("bg-") === 0) {
-//       return true;
-//     }
-//   }
-//   return false;
-// };
 ---
 
 <style>
@@ -30,7 +9,7 @@ const { class: className, title } = Astro.props;
     max-width: 450px;
   }
 
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 30rem) {
     .mobile-card {
       border-radius: 30px;
     }
