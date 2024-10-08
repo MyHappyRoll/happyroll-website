@@ -1,17 +1,15 @@
----
----
-<canvas id="maki-animation" width="600" height="600"></canvas>
+<canvas class="nr6" id="maki-animation" width="400" height="400"></canvas>
 <script is:inline src="https://unpkg.com/@rive-app/canvas@2.20.0"></script>
 <script>
     const r = new rive.Rive({
-        src: '/rive/lucky_cat_02.riv',
+        src: '/rive/lucky_cat_03.riv',
         canvas: document.getElementById('maki-animation'),
         autoplay: true,
         stateMachines: 'State Machine 1',
-        layout: new rive.Layout({
-            fit: rive.Fit.FitWidth, // Change to: rive.Fit.Contain, or Cover
-            alignment: rive.Alignment.Center,
-        }),
+        // layout: new rive.Layout({
+        //     // fit: rive.Fit.Contain, // Change to: rive.Fit.Contain, or Cover
+        //     // alignment: rive.Alignment.Center,
+        // }),
         onLoad: () => {
             // Prevent a blurry canvas by using the device pixel ratio
             r.resizeDrawingSurfaceToCanvas();
