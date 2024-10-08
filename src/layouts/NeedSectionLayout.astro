@@ -4,40 +4,28 @@ import Button from "../components/Button.astro";
 ---
 
 <style>
-  #need-section {
-    min-height: 480px;
-    /* height: 100vh; */
+  .need-section__content {
+    background-color: rgba(255,255,255, .5);
+    z-index: 1;
+    margin: 3rem 0 4rem;
   }
 
   @media screen and (min-width: 800px) {
     .items-start-800 {
       align-items: start;
     }
-
-    #need-section {
-      min-height: 480px;
-      height: unset;
-    }
   }
 </style>
 
 <section
   id="need-section"
-  class="need-section flex flex-column items-center pb5 pb6-l ph3 relative"
+  class="need-section flex flex-column items-center ph3 relative bg-white"
 >
-  <div class="logos logos--top w-100 flex justify-center pv4 dn-ns">
-    <img
-      src="/images/chownow-toast.svg"
-      alt="ChowNow & Toast logos"
-      width="176.7"
-      height="102.5"
-    />
-  </div>
-
+  <LogoCloud />
   <div class="need-section__content flex flex-column">
-    <div class="need-section__content--left flex justify-center">
+    <!-- <div class="need-section__content--left flex justify-center"> -->
       <div class="measure">
-        <h2 class="f4 f3-ns f2-l neutral-800 lh-title fw6 tc mt0-l pt5 pt6-l">
+        <h2 class="f4 f3-ns f2-l neutral-800 lh-title fw6 tc mt0-l pv4">
           {
             "So many tools and apps make marketing your sushi restaurant overwhelming".toTitleCase()
           }
@@ -53,16 +41,6 @@ import Button from "../components/Button.astro";
           >
         </div>
       </div>
-    </div>
-    <LogoCloud />
-  </div>
 
-  <div class="logos logos--bottom w-100 flex justify-center pt5 pb4 dn-ns">
-    <img
-      src="/images/tripadvisor-yelp.svg"
-      alt="TripAdvisor & Yelp logos"
-      width="176.7"
-      height="74.9"
-    />
   </div>
 </section>

@@ -28,7 +28,6 @@ const logos = [
     height: 100%;
     width: 100%;
     overflow: hidden;
-    z-index: -1;
   }
 
   .cloud-item {
@@ -45,22 +44,12 @@ const logos = [
 
   @keyframes scrolling {
     100% {
-      transform: translateY(-500px);
-    }
-  }
-
-  @media screen and (min-width: 800px) {
-    .db-800 {
-      display: block;
-    }
-
-    .dn-800 {
-      display: none;
+      transform: translateY(-530px);
     }
   }
 </style>
 
-<div class="logo-cloud js-logo-cloud fw left-0 dn db-ns">
+<div class="logo-cloud js-logo-cloud fw left-0 db-ns">
   {
     logos.map((logo) => (
       <img

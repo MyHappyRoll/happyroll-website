@@ -3,10 +3,30 @@ import Button from "./Button.astro";
 ---
 
 <style>
-  .header-container {
-    height: 60px;
+  .header {
+    margin: calc(1em + 1px) auto 0; /* visually compensate for the trick */
+    height: 75px;
+    position: sticky;
+    top: -1px; /* trick the observer into seeing a viewport intersection */
+    transition: all 200ms ease-in-out;
+    z-index: 10;
+    border-radius: 14px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-    border-radius: 12px;
+  }
+
+  .is-stuck {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    background-color: var(--white);
+  }
+
+  .header__inner-wrapper {
+    max-width: 60rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
   }
 
   button {
@@ -19,7 +39,7 @@ import Button from "./Button.astro";
   }
 
   .logo img {
-    max-width: 120px;
+    width: 10rem;
   }
 
   .mw-340 {
@@ -43,16 +63,7 @@ import Button from "./Button.astro";
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   }
 
-  @media screen and (min-width: 480px) {
-    .header-container {
-      height: 90px;
-      border-radius: 20px;
-    }
-
-    .logo img {
-      max-width: 160px;
-    }
-
+  @media screen and (min-width: 30rem) {
     #menu {
       top: 122px;
     }
@@ -61,25 +72,33 @@ import Button from "./Button.astro";
       height: 35rem;
     }
   }
+
+  @media screen and (max-width: 60rem) {
+    .header {
+      position: fixed;
+      top: 0;
+      margin: 0;
+      width: 100%;
+      border-radius: 0;
+      background-color: var(--white);
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    }
+  }
 </style>
 
+<!-- ph3 -->
 <header
-  class="pv3 pv4-l flex items-center justify-center w-100 bg-neutral-100 ph3 relative"
+  id="site-header"
+  class="header mw8 center pv2 ph2 ph4-ns flex justify-center items-center relative bg-white"
 >
-  <div
-    class="header-container bg-white w-100 mw8 ph2 ph3-ns flex items-center justify-between"
-  >
-    <div class="header__left flex items-center h-100 w-40-ns w-25-l">
-      <a href="/" class="logo flex items-center" aria-label="Back to homepage">
-        <img
-          src="/images/happyroll-pink-logo.svg"
-          alt="HappyRoll Smiling H logo in pink."
-          width="120"
-          height="37.2"
-          class="w-100 h-100"
-        />
-      </a>
-    </div>
+  <div class="header__inner-wrapper w-100">
+    <a href="/" class="logo flex items-center no-underline" aria-label="Back to homepage">
+      <img
+        src="/images/h-logo-full.svg"
+        alt="HappyRoll Smiling H logo in pink."
+      />
+    </a>
+    
     <div
       class="header__middle dn flex-l items-center h-100 w-50-l justify-center"
     >
@@ -100,7 +119,7 @@ import Button from "./Button.astro";
         </ul>
       </nav>
     </div>
-    <div class="header__right flex items-center h-100 w-25-ns justify-end">
+    <div class="header__right flex items-center h-100 justify-end">
       <div class="dn-l">
         <button
           id="menuButton"
@@ -142,11 +161,30 @@ import Button from "./Button.astro";
       </div>
     </div>
   </div>
+</div>
 </header>
 
 <script>
-  let menuButton = document.getElementById("menuButton");
+  
   let menu = document.getElementById("menu");
+  let menuButton = document.getElementById("menuButton");
+
+  const header = document.getElementById("site-header");
+  // const headerContainer = header?.querySelector('.header-container')
+  if (header) {
+    const observer = new IntersectionObserver(
+      ([e]) => {
+        e.target.classList.toggle(
+          "is-stuck",
+          // is intersecting the top but not the left or right
+          e.boundingClientRect.width <= e.intersectionRect.width &&
+            e.intersectionRatio < 1
+        );
+      },
+      { threshold: 1 }
+    );
+    observer.observe(header);
+  }
 
   menuButton?.addEventListener("click", (event) => {
     menu?.classList.contains("dn")

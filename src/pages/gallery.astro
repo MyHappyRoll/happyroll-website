@@ -1,14 +1,23 @@
 ---
-import { Image } from "astro:assets";
 import PageLayout from "../layouts/PageLayout.astro";
 ---
+<style>
+    .hero-section {
+      padding-top: 6rem;
+    }
 
+    @media screen and (min-width: 60rem) {
+      .hero-section {
+        padding-top: 4rem;
+      }
+    }
+</style>
 <PageLayout
   title="Web Designs for Sushi Restaurants | Gallery | HappyRoll"
   description="Check out our gallery of stunning web designs for sushi restaurants. See how HappyRoll can elevate your brand's online presence."
 >
   <main class="bg-neutral-100">
-    <section id="hero" class="hero-section pt4 pb5 pv5-l ph3">
+    <section id="hero" class="hero-section">
       <div class="hero-section__content mw7 center">
         <h1
           class="neutral-800 f3 f2-ns f1-l lh-title mt0-l fw6 w-80-ns center tc"

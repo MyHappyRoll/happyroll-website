@@ -7,6 +7,10 @@ import Button from "../components/Button.astro";
 ---
 
 <style>
+  .hero-section {
+    padding-top: 6rem;
+  }
+
   #pricing {
     min-height: 480px;
   }
@@ -110,13 +114,17 @@ import Button from "../components/Button.astro";
     }
   }
 
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 30rem) {
     .pricing-card {
       border-radius: 30px;
     }
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 60rem) {
+    .hero-section {
+      padding-top: 4rem;
+    }
+
     .pricing-table__comparison-table {
       display: flex;
     }
@@ -126,7 +134,7 @@ import Button from "../components/Button.astro";
     }
   }
 
-  @media screen and (min-width: 1060px) {
+  @media screen and (min-width: 66rem) {
     .pricing-section__container {
       padding-left: 0;
       padding-right: 0;
@@ -139,7 +147,7 @@ import Button from "../components/Button.astro";
   description="Explore our value-driven plans for web design and marketing tailored to sushi restaurants. Discover the best fit for your needs."
 >
   <main class="bg-neutral-100">
-    <section id="hero" class="hero-section pt4 pb5 ph3">
+    <section id="hero" class="hero-section pb5 ph3">
       <div class="hero-section__content mw7 center">
         <h1
           class="neutral-800 f3 f2-ns f1-l lh-title mt0-l fw6 w-70-ns center tc"
