@@ -1,0 +1,64 @@
+<style>
+    .maki-anim {
+        max-width: 800px;
+    }
+    @media (min-width: 60rem) and (max-width: 75rem) {
+        .maki-anim {
+            margin-top: 4rem;
+        }
+    }
+</style>
+<canvas id="maki-animation" class="maki-anim absolute-l top-2-l w-60-l right-1-l nt6 nt1-l" width="400" height="400"></canvas>
+<script is:inline src="https://unpkg.com/@rive-app/canvas@2.20.0"></script>
+<!-- https://help.rive.app/runtimes/state-machines#controlling-state-machine-inputs -->
+<script>
+    import { isTouchDevice } from "../touch"
+
+    const bookButtons = document.querySelectorAll('[href="/#book-a-call"]')
+
+    const DEFAULT_STATE = 0
+    const ACTIVE_STATE = 100
+    const DEFAULT_STATE_MACHINE = 'State Machine 1'
+    const HAPPY_SM_INPUT = 'Number 1'
+
+    // @todo track mouse outside the canvas and translate it to anim inputs
+    const r = new rive.Rive({
+        src: '/rive/lucky_cat_03.riv',
+        canvas: document.getElementById('maki-animation'),
+        autoplay: true,
+        stateMachines: DEFAULT_STATE_MACHINE,
+        shouldDisableRiveListeners: isTouchDevice(),
+        layout: new rive.Layout({
+            fit: rive.Fit.Contain, // https://help.rive.app/runtimes/layout#fit
+            alignment: rive.Alignment.TopCenter,
+        }),
+        onLoad: () => {
+            // Prevent a blurry canvas by using the device pixel ratio
+            r.resizeDrawingSurfaceToCanvas();
+
+            // Get the inputs via the name of the state machine
+            const inputs = r.stateMachineInputs(DEFAULT_STATE_MACHINE);
+            // Find the input you want to set a value for, or trigger
+            const activeTrigger = inputs.find(i => i.name === HAPPY_SM_INPUT);
+
+            // if it's a touch device we'll enable the "happy state" and
+            // disabled interactions on the animation so it doesn't
+            // interfere with navigation / scrolling
+            if (isTouchDevice()) {
+                activeTrigger.value = ACTIVE_STATE
+                return
+            }
+            
+            // Trigger the happy animation state when user's hover the book a call buttons
+            bookButtons.forEach(btn => {
+                btn.addEventListener('mouseover', () => {
+                    activeTrigger.value = ACTIVE_STATE
+                })
+                btn.addEventListener('mouseout', () => {
+                    activeTrigger.value = DEFAULT_STATE
+                })
+            })
+        },
+    });
+</script>
+  

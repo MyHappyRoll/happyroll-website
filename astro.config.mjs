@@ -6,4 +6,7 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://happyroll.netlify.app", // TODO: Set to domain when live.
   integrations: [mdx(), sitemap()],
+  vite: {
+    assetsInclude: ['**/*.riv'],
+  },
 });

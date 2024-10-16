@@ -71,6 +71,9 @@ const logos = [
       const ANIM_BASE_DURATION_MS = 5000;
       const ITEM_WIDTH = 50;
       const ANIM_DURATION_MULTIPLIER = 1.25;
+      const MAX_TRIES = 5
+
+      let tries = 0;
 
       if (!logoCloudEl) {
         return;
@@ -123,9 +126,16 @@ const logos = [
 
         // ensure the position doesn't intersect with another
         if (intersectsPosition(x)) {
+          // don't let the call stack get exceeded.
+          // If there's some overlap in mobile, it's cool
+          if (tries++ >= MAX_TRIES) {
+            return;
+          }
           // if it does, recalculate
           return placeItem(item);
         }
+
+        tries = 0;
 
         savedPositions.push(x);
         item.style.left = `${x}px`;

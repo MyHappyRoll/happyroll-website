@@ -1,5 +1,6 @@
 ---
 import Button from "../components/Button.astro";
+import RiveHeroAnimation from "../components/RiveHeroAnimation.astro";
 ---
 
 <style>
@@ -11,11 +12,6 @@ import Button from "../components/Button.astro";
     gap: 60px;
   }
 
-  .hero-image-placeholder {
-    width: 268px;
-    height: 268px;
-  }
-
   .hero-section__subheadline {
     max-width: 390px;
   }
@@ -24,16 +20,10 @@ import Button from "../components/Button.astro";
     .hero-section__container {
       gap: 60px;
     }
-
-    .hero-image-placeholder {
-      width: 358px;
-      height: 358px;
-    }
   }
 
   @media screen and (min-width: 30rem) {
     .hero-section__container {
-      height: 646px;
       gap: 40px;
     }
 
@@ -46,15 +36,25 @@ import Button from "../components/Button.astro";
     .hero-section {
       padding-top: 0rem;
     }
+
+    .hero-section__content {
+      z-index: 0;
+    }
+
+    @media (orientation: portrait) {
+      .hero-section {
+        height: auto;
+      }
+    }
   }
 </style>
 
-<section id="hero" class="hero-section bg-neutral-100">
+<section id="hero" class="hero-section vh-100 vh-1-l bg-neutral-100">
   <div
-    class="hero-section__container w-100 flex flex-column flex-row-l justify-between-l w-100 ph3 ph4-l pb5 mw8 center"
+    class="hero-section__container w-100 h-100 ph3 flex flex-column flex-none-l ph4-l pb5 mw8 center"
   >
     <div
-      class="hero-section__content hero-section__content--left w-100 w-60-l flex justify-center items-center-l pt3-ns pt0-l"
+      class="hero-section__content h-100 w-100 w-60-l flex justify-center items-center-l pa4 pt0-l z-1"
     >
       <div class="h-75 measure mw-none-l tc tl-l">
         <h1 class="neutral-800 f3 f2-ns f1-l lh-title mt0-l fw6 ttc">
@@ -77,14 +77,6 @@ import Button from "../components/Button.astro";
         </div>
       </div>
     </div>
-    <div
-      class="hero-section__content hero-section__content--right w-100 w-40-l flex justify-center justify-end-l items-center"
-    >
-      <div
-        class="hero-image-placeholder bg-neutral-900 flex items-center justify-center"
-      >
-        <span class="white">Maneki neko animation</span>
-      </div>
-    </div>
+    <RiveHeroAnimation />
   </div>
 </section>
