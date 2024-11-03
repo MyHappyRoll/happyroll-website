@@ -1,11 +1,22 @@
 ---
 import { Image } from "astro:assets";
 import PageLayout from "../layouts/PageLayout.astro";
+import Button from "../components/Button.astro";
 ---
 
 <PageLayout
   title="Page Not Found | HappyRoll"
   description="Oops! The page you're looking for doesn't exist. Return to the HappyRoll homepage or explore our services."
 >
-  <main></main>
+  <main class="vh-75">
+    <section class="tc pt5 measure center lh-copy">
+      <h1 class="neutral-800">
+        Oops! The page you're looking for doesn't exist.
+      </h1>
+
+      <div class="flex justify-center">
+        <Button isDarkTransparentButton href="/">Back to homepage</Button>
+      </div>
+    </section>
+  </main>
 </PageLayout>

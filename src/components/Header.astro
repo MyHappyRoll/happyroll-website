@@ -4,10 +4,10 @@ import Button from "./Button.astro";
 
 <style>
   .header {
-    margin: calc(1em + 1px) auto 0; /* visually compensate for the trick */
+    margin: calc(1em + 1px) auto 0; visually compensate for the trick
     height: 75px;
     position: sticky;
-    top: -1px; /* trick the observer into seeing a viewport intersection */
+    top: -1px; trick the observer into seeing a viewport intersection
     transition: all 200ms ease-in-out;
     z-index: 10;
     border-radius: 14px;
@@ -39,7 +39,7 @@ import Button from "./Button.astro";
   }
 
   .logo img {
-    width: 10rem;
+    width: 8rem;
   }
 
   .mw-340 {
@@ -72,33 +72,24 @@ import Button from "./Button.astro";
       height: 35rem;
     }
   }
-
-  @media screen and (max-width: 60rem) {
-    .header {
-      position: fixed;
-      top: 0;
-      margin: 0;
-      width: 100%;
-      border-radius: 0;
-      background-color: var(--white);
-      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-    }
-  }
 </style>
 
-<!-- ph3 -->
 <header
   id="site-header"
-  class="header mw8 center pv2 ph2 ph4-ns flex justify-center items-center relative bg-white"
+  class="header w-90 mw8 center pv3 ph3 ph4-ns flex justify-center items-center relative bg-white"
 >
   <div class="header__inner-wrapper w-100">
-    <a href="/" class="logo flex items-center no-underline" aria-label="Back to homepage">
+    <a
+      href="/"
+      class="logo flex items-center no-underline"
+      aria-label="Back to homepage"
+    >
       <img
         src="/images/h-logo-full.svg"
         alt="HappyRoll Smiling H logo in pink."
       />
     </a>
-    
+
     <div
       class="header__middle dn flex-l items-center h-100 w-50-l justify-center"
     >
@@ -136,7 +127,9 @@ import Button from "./Button.astro";
   <div id="menu" class="absolute w-100 vh-100 bg-transparent ph3 dn">
     <div class="menu-container bg-white br4 pt3 mw7 center">
       <nav class="h-75 flex items-center w-100">
-        <ul class="list tc pl0 flex flex-column justify-around h-75 mt0 w-100">
+        <ul
+          class="list tc pl0 flex flex-column justify-around h-75 mt0 w-100 mb0"
+        >
           <li>
             <a href="/pricing/" class="link neutral-800 f3 f2-ns">Pricing</a>
           </li>
@@ -153,19 +146,13 @@ import Button from "./Button.astro";
       </nav>
 
       <div class="flex justify-center">
-        <a
-          href="/#book-a-call"
-          class="br-pill bg-primary-600 white b--neutral-800 ba ph3 flex items-center w-fc link f3 h3"
-          >Book a call</a
-        >
+        <Button href="/#book-a-call" isPinkButton>Book a call</Button>
       </div>
     </div>
   </div>
-</div>
 </header>
 
 <script>
-  
   let menu = document.getElementById("menu");
   let menuButton = document.getElementById("menuButton");
 

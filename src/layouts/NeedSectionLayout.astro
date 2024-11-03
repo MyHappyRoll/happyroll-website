@@ -5,9 +5,13 @@ import Button from "../components/Button.astro";
 
 <style>
   .need-section__content {
-    background-color: rgba(255,255,255, .5);
+    background-color: rgba(255, 255, 255, 0.5);
     z-index: 1;
     margin: 3rem 0 4rem;
+  }
+
+  .need-section {
+    height: 65vh;
   }
 
   @media screen and (min-width: 800px) {
@@ -19,28 +23,26 @@ import Button from "../components/Button.astro";
 
 <section
   id="need-section"
-  class="need-section flex flex-column items-center ph3 relative bg-white"
+  class="need-section flex flex-column items-center ph3 relative bg-white bb bt b--light-gray"
 >
   <LogoCloud />
   <div class="need-section__content flex flex-column">
     <!-- <div class="need-section__content--left flex justify-center"> -->
-      <div class="measure">
-        <h2 class="f4 f3-ns f2-l neutral-800 lh-title fw6 tc mt0-l pv4">
-          {
-            "So many tools and apps make marketing your sushi restaurant overwhelming".toTitleCase()
-          }
-        </h2>
-        <p class="neutral-600 lh-copy sans-serif tc">
-          From posting pics on Instagram to responding to customer
-          reviews&mdash;you do a lot to keep your sushi restaurant running.
-        </p>
+    <div class="measure">
+      <h2 class="f4 f3-ns f2-l neutral-800 lh-title fw6 tc mt0-l pv4">
+        So Many Tools &amp; Apps Make Marketing Your Sushi Restaurant
+        Overwhelming
+      </h2>
+      <p class="neutral-600 lh-copy sans-serif tc">
+        From posting pics on Instagram to responding to customer
+        reviews&mdash;you do a lot to keep your sushi restaurant running.
+      </p>
 
-        <div class="pt2 flex justify-center">
-          <Button href="/about/" isDarkTransparentButton
-            >Discover HappyRoll</Button
-          >
-        </div>
+      <div class="pt2 flex justify-center">
+        <Button href="/about/" isDarkTransparentButton
+          >Discover HappyRoll</Button
+        >
       </div>
-
+    </div>
   </div>
 </section>
