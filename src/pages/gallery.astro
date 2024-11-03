@@ -1,16 +1,34 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
 ---
+
 <style>
+  .designs-section {
+    min-height: 480px;
+  }
+
+  .designs-section__container {
+    gap: 30px;
+  }
+
+  .design-sample {
+    max-width: 353px;
+    height: 350px;
+  }
+
+  @media screen and (min-width: 960px) {
     .hero-section {
-      padding-top: 6rem;
+      padding-top: 4rem;
     }
 
-    @media screen and (min-width: 60rem) {
-      .hero-section {
-        padding-top: 4rem;
-      }
+    .designs-section__container {
+      gap: 25px;
     }
+
+    .design-sample {
+      max-width: 314px;
+    }
+  }
 </style>
 <PageLayout
   title="Web Designs for Sushi Restaurants | Gallery | HappyRoll"
@@ -18,7 +36,7 @@ import PageLayout from "../layouts/PageLayout.astro";
 >
   <main class="bg-neutral-100">
     <section id="hero" class="hero-section">
-      <div class="hero-section__content mw7 center">
+      <div class="hero-section__content mw7 center ph3 pt4">
         <h1
           class="neutral-800 f3 f2-ns f1-l lh-title mt0-l fw6 w-80-ns center tc"
         >
@@ -26,10 +44,21 @@ import PageLayout from "../layouts/PageLayout.astro";
         </h1>
 
         <p class="neutral-600 lh-copy sans-serif center measure-wide tc">
-          Discover the stunning, custom websites we've crafted to showcase the
-          unique flavors and experiences of sushi restaurants. Each design is
-          tailored to elevate their online presence and attract more diners.
+          A sampling of the custom website designs we've crafted to showcase the
+          unique flavors and experiences of sushi restaurants.
         </p>
+      </div>
+    </section>
+    <section id="designs-section" class="designs-section">
+      <div
+        class="designs-section__container ph3 pt5 pb6 flex flex-wrap items-center justify-center mw7 mw8-l center"
+      >
+        <div class="design-sample w-100 w-third-l bg-neutral-800 br4"></div>
+        <div class="design-sample w-100 w-third-l bg-neutral-800 br4"></div>
+        <div class="design-sample w-100 w-third-l bg-neutral-800 br4"></div>
+        <div class="design-sample w-100 w-third-l bg-neutral-800 br4"></div>
+        <div class="design-sample w-100 w-third-l bg-neutral-800 br4"></div>
+        <div class="design-sample w-100 w-third-l bg-neutral-800 br4"></div>
       </div>
     </section>
   </main>
