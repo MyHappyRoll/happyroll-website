@@ -5,62 +5,60 @@ import RiveHeroAnimation from "../components/RiveHeroAnimation.astro";
 
 <style>
   .hero-section {
-    padding-top: 6rem;
-  }
-
-  .hero-section__container {
-    gap: 60px;
+    min-height: 480px;
+    height: fit-content;
   }
 
   .hero-section__subheadline {
     max-width: 390px;
   }
 
-  @media screen and (min-width: 30rem) {
-    .hero-section__container {
-      gap: 60px;
-    }
+  .hero-section__image-container {
+    width: 268px;
+    height: 268px;
+  }
+
+  .hero-section__container {
+    gap: 60px;
   }
 
   @media screen and (min-width: 30rem) {
-    .hero-section__container {
-      gap: 40px;
-    }
-
-    .hero-section__subheadline {
-      max-width: 470px;
-    }
-  }
-
-  @media screen and (min-width: 60rem) {
     .hero-section {
-      padding-top: 0rem;
+      height: fit-content;
     }
 
-    .hero-section__content {
-      z-index: 0;
+    .hero-section__image-container {
+      width: 400px;
+      height: 400px;
+    }
+  }
+
+  @media screen and (min-width: 960px) {
+    .hero-section {
+      min-height: 600px;
     }
 
-    @media (orientation: portrait) {
-      .hero-section {
-        height: auto;
-      }
+    .hero-section__image-container {
+      width: 460px;
+      height: 460px;
+    }
+
+    .hero-section__container {
+      gap: 0;
     }
   }
 </style>
 
-<section id="hero" class="hero-section vh-100 vh-1-l bg-neutral-100">
+<section id="hero" class="hero-section bg-neutral-100 flex-l items-center">
   <div
-    class="hero-section__container w-100 h-100 ph3 flex flex-column flex-none-l ph4-l pb5 mw8 center"
+    class="hero-section__container w-100 h-100 ph3 flex flex-column flex-row-l justify-center-l pt4 center relative mw8"
   >
     <div
-      class="hero-section__content h-100 w-100 w-60-l flex justify-center items-center-l pa4 pt0-l z-1"
+      class="hero-section__content h-100 w-100 w-40-l flex justify-center items-center-l z-1"
     >
-      <div class="h-75 measure mw-none-l tc tl-l">
-        <h1 class="neutral-800 f3 f2-ns f1-l lh-title mt0-l fw6 ttc">
-          {
-            "Double your sushi restaurant's revenue, or your marketing is free.".toTitleCase()
-          }
+      <div class="measure mw-none-l tc tl-l">
+        <h1 class="neutral-800 f3 f2-ns lh-title fw6 mt0-l">
+          Double the Customer Loyalty of Your Sushi Restaurant
         </h1>
 
         <p
@@ -77,6 +75,8 @@ import RiveHeroAnimation from "../components/RiveHeroAnimation.astro";
         </div>
       </div>
     </div>
-    <RiveHeroAnimation />
+    <div class="hero-section__image-container center mh0-l relative">
+      <RiveHeroAnimation />
+    </div>
   </div>
 </section>
