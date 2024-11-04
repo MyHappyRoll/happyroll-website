@@ -1,5 +1,7 @@
 ---
-const { class: className, title } = Astro.props;
+import { toTitleCase } from "../utils/text";
+
+const { title } = Astro.props;
 ---
 
 <style>
@@ -26,7 +28,7 @@ const { class: className, title } = Astro.props;
   </div>
   <div class="mobile-card--right w-80-ns pv3-ns">
     <h3 class="f5 f3-ns lh-title neutral-800 mt0-ns fw5">
-      {`${title}`.toTitleCase()}
+      {toTitleCase(title)}
     </h3>
 
     <slot name="description" />

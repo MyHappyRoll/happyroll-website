@@ -23,7 +23,7 @@ const {
 </style>
 
 <a
-  href={href}
+  {...Astro.props}
   class:list={[
     "button ph3 flex items-center link",
     { "bg-primary-600": isPinkButton },
