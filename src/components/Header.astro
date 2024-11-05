@@ -1,4 +1,5 @@
 ---
+import BookACallButton from "./BookACallButton.astro";
 import Button from "./Button.astro";
 ---
 
@@ -119,7 +120,7 @@ import Button from "./Button.astro";
         >
       </div>
       <div class="dn db-l">
-        <Button href="/#book-a-call" isPinkButton>Book a call</Button>
+        <BookACallButton isPinkButton>
       </div>
     </div>
   </div>
@@ -146,7 +147,7 @@ import Button from "./Button.astro";
       </nav>
 
       <div class="flex justify-center">
-        <Button href="/#book-a-call" isPinkButton>Book a call</Button>
+        <BookACallButton isPinkButton>
       </div>
     </div>
   </div>
@@ -185,3 +186,22 @@ import Button from "./Button.astro";
     }
   });
 </script>
+
+<!-- Cal floating-popup embed code begins -->
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "free-consultation", {origin:"https://cal.com"});
+
+  Cal.ns["free-consultation"]("floatingButton", {"calLink":"happyroll/free-consultation","config":{"layout":"month_view"},"buttonText":"Book a call","hideButtonIcon":false,"buttonColor":"#da137d"}); 
+  Cal.ns["free-consultation"]("ui", {"styles":{"branding":{"brandColor":"#da137d"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+  <!-- Cal floating-popup embed code ends -->
+
+  <!-- Cal element-click embed code begins -->
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "free-consultation", {origin:"https://cal.com"});
+  Cal.ns["free-consultation"]("ui", {"styles":{"branding":{"brandColor":"#da137d"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+  <!-- Cal element-click embed code ends -->
+</section>

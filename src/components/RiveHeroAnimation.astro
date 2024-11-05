@@ -17,7 +17,6 @@
   @media screen and (min-width: 960px) {
     .maki-anim {
       top: -70px;
-      right: -50px;
     }
   }
 </style>
@@ -28,8 +27,7 @@
 <script>
   import { isTouchDevice } from "../touch";
 
-  const bookButtons = document.querySelectorAll('[href="/#book-a-call"]');
-
+  const bookButtons = document.querySelectorAll('[href="#"]');
   const DEFAULT_STATE = 0;
   const ACTIVE_STATE = 100;
   const DEFAULT_STATE_MACHINE = "State Machine 1";
@@ -74,4 +72,5 @@
       });
     },
   });
+  console.log(r)
 </script>

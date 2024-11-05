@@ -1,4 +1,6 @@
 ---
+import BookACallButton from "../components/BookACallButton.astro";
+
 
 ---
 
@@ -59,12 +61,10 @@
   <div
     class="section__container mw8 center ph3 ph4-ns pv4 pt5-ns pb6 flex flex-column flex-row-l relative"
   >
-    <div class="w-100 mw6 center w-50-l self-start left-box">
+    <div class="w-100 mw6 center self-start">
       <div class="measure pt3-l">
         <h2 class="f2 f1-ns fw6">
-          {
-            "Ready to take your sushi restaurant to the next level?".toTitleCase()
-          }
+          Ready To Take Your Sushi Restaurant To The Next Level?
         </h2>
         <p class="sans-serif lh-copy">
           Fill out the contact form today to schedule your free 30-minute
@@ -104,153 +104,8 @@
           </li>
         </ul>
       </div>
-    </div>
-    <div class="w-100 w-50-l">
-      <div class="form-container flex justify-center pt5-l mw6 center">
-        <form
-          name="Free 30-Minute Consultation Request"
-          class="w-100 flex flex-column"
-          method="POST"
-          data-netlify="true"
-        >
-          <div
-            class="form__input-group flex flex-column flex-row-ns justify-between"
-          >
-            <div class="form__input flex flex-column">
-              <label for="first-name" class="pb2">First name</label>
-              <input
-                type="text"
-                name="First Name"
-                id="first-name"
-                class="bg-transparent ba bw1 br-pill b--primary-400"
-                required
-              />
-            </div>
-            <div class="form__input flex flex-column">
-              <label for="last-name" class="pb2">Last name</label>
-              <input
-                type="text"
-                name="Last Name"
-                id="last-name"
-                class="bg-transparent ba bw1 br-pill b--primary-400"
-                required
-              />
-            </div>
-          </div>
-          <div class="form__input flex flex-column">
-            <label for="email" class="pb2">Email address</label>
-            <input
-              type="email"
-              name="Email Address"
-              id="email"
-              class="bg-transparent ba bw1 br-pill b--primary-400"
-              required
-            />
-          </div>
-          <div
-            class="form__input-group flex flex-column flex-row-ns justify-between"
-          >
-            <div class="form__input flex flex-column">
-              <label for="restaurant-name" class="pb2">Restaurant name</label>
-              <input
-                type="text"
-                name="Restaurant Name"
-                id="restaurant-name"
-                class="bg-transparent ba bw1 br-pill b--primary-400"
-                required
-              />
-            </div>
-            <div class="form__input flex flex-column">
-              <label for="restaurant-website" class="pb2"
-                >Restaurant website</label
-              >
-              <input
-                type="url"
-                name="Restaurant Website"
-                id="restaurant-website"
-                class="bg-transparent ba bw1 br-pill b--primary-400"
-              />
-            </div>
-          </div>
-          <div
-            class="form__input-group flex flex-column flex-row-ns justify-between"
-          >
-            <div class="form__input flex flex-column">
-              <label for="preferred-date" class="pb2"
-                >Preferred date for consultation</label
-              >
-              <input
-                type="date"
-                name="Preferred Date for Consultation"
-                id="preferred-date"
-                class="bg-transparent ba bw1 br-pill b--primary-400 white"
-                required
-              />
-            </div>
-            <div class="form__input flex flex-column">
-              <label for="preferred-time" class="pb2"
-                >Preferred time for consultation</label
-              >
-              <input
-                type="time"
-                name="Preferred Time for Consultation"
-                id="preferred-time"
-                class="bg-transparent ba bw1 br-pill b--primary-400 white"
-                required
-              />
-            </div>
-          </div>
-          <div
-            class="form__input-group flex flex-column flex-row-ns justify-between"
-          >
-            <div class="form__input flex flex-column">
-              <label for="timezone" class="pb2">Timezone</label>
-              <select
-                name="Timezone"
-                id="timezone"
-                class="bg-transparent ba bw1 br-pill b--primary-400 white"
-                required
-              >
-                <option value="">Select a timezone</option>
-                <option value="ET">Eastern Time (e.g. New York)</option>
-                <option value="CT">Central Time (e.g. Chicago)</option>
-                <option value="PT">Pacific Time (e.g. Los Angeles)</option>
-                <option value="MT">Mountain Time (e.g. Phoenix)</option>
-              </select>
-            </div>
-            <div class="form__input flex flex-column">
-              <label for="referrer" class="pb2">How'd you hear about us?</label>
-              <select
-                name="How Did You Hear About Us?"
-                id="referrer"
-                class="bg-transparent ba bw1 br-pill b--primary-400 white"
-              >
-                <option value="">Choose an option</option>
-                <option value="Google Search">Google Search</option>
-                <option value="Social Media">Social Media</option>
-                <option value="Referral">Referral</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-          </div>
-          <div class="form__input flex flex-column pt3-ns">
-            <label for="challenges-and-goals" class="pb2"
-              >Marketing challenges or goals?</label
-            >
-            <textarea
-              name="Marketing Challenges or Goals"
-              id="challenges-and-goals"
-              class="bg-transparent ba bw1 br4 b--primary-400 pa3 white"
-            ></textarea>
-          </div>
-
-          <input
-            type="submit"
-            value="Get your free consultation"
-            class="white bg-primary-600 ba bw1 b--white br-pill dim mt3-ns"
-          />
-        </form>
+      <div class="center">
+        <BookACallButton isTransparentButton/>
       </div>
     </div>
   </div>
-</section>
