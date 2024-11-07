@@ -1,16 +1,10 @@
 ---
 import BookACallButton from "../components/BookACallButton.astro";
-
-
 ---
 
 <style>
   section {
-    min-height: 75vh;
-  }
-
-  .section__container {
-    gap: 60px;
+    min-height: 480px;
   }
 
   ul {
@@ -46,6 +40,10 @@ import BookACallButton from "../components/BookACallButton.astro";
     height: 60px;
   }
 
+  .column-wrapper {
+    gap: 80px;
+  }
+
   @media screen and (min-width: 30rem) {
     .form__input-group {
       gap: 0px;
@@ -57,55 +55,57 @@ import BookACallButton from "../components/BookACallButton.astro";
   }
 </style>
 
-<section id="book-a-call" class="fw bg-primary-600 white section pb5">
-  <div
-    class="section__container mw8 center ph3 ph4-ns pv4 pt5-ns pb6 flex flex-column flex-row-l relative"
-  >
-    <div class="w-100 mw6 center self-start">
-      <div class="measure pt3-l">
-        <h2 class="f2 f1-ns fw6">
-          Ready To Take Your Sushi Restaurant To The Next Level?
-        </h2>
-        <p class="sans-serif lh-copy">
-          Fill out the contact form today to schedule your free 30-minute
-          HappyRoll marketing consultation. Let's discuss how we can help you
-          attract more customers and grow your business with our tailored
-          strategies.
-        </p>
-        <p class="f3 fw5">On this free 30-minute call, you'll get:</p>
-        <ul class="list pl0 pt3 flex flex-column sans-serif w-90-ns">
-          <li class="flex lh-title">
-            <i class="bi bi-check-circle-fill white f4"></i>
-            <span>
-              Personalized Consultation: An assessment of your current marketing
-              efforts.
-            </span>
-          </li>
-          <li class="flex lh-title">
-            <i class="bi bi-check-circle-fill white f4"></i>
-            <span
-              >Growth Opportunities: Identification of key areas to increase
-              revenue.</span
-            >
-          </li>
-          <li class="flex lh-title">
-            <i class="bi bi-check-circle-fill white f4"></i>
-            <span
-              >Tailored Strategy: A customized plan to double your revenue in
-              six months.</span
-            >
-          </li>
-          <li class="flex lh-title">
-            <i class="bi bi-check-circle-fill white f4"></i>
-            <span
-              >Expert Guidance: Actionable advice to attract more customers and
-              enhance your online presence.</span
-            >
-          </li>
-        </ul>
+<section id="book-a-call" class="fw bg-primary-600 white section">
+  <div class="section__container mw8 center ph3 flex pv5 pv6-l">
+    <div class="w-100 center">
+      <div class="pt3-l flex-l column-wrapper">
+        <div class="w-100 w-50-l">
+          <h2 class="f2 f1-ns fw6 mv0">
+            Ready To Take Your Sushi Restaurant To The Next Level?
+          </h2>
+          <p class="sans-serif lh-copy">
+            Schedule your free 30-minute HappyRoll marketing consultation. Let's
+            discuss how we can help you attract more customers and grow your
+            business with our tailored strategies.
+          </p>
+        </div>
+        <div class="w-100 w-50-l">
+          <p class="f3 fw5 mt0-l">On this free 30-minute call, you'll get:</p>
+          <ul class="list pl0 flex flex-column sans-serif w-90-ns">
+            <li class="flex lh-title">
+              <i class="bi bi-check-circle-fill white f4"></i>
+              <span>
+                Personalized Consultation: An assessment of your current
+                marketing efforts.
+              </span>
+            </li>
+            <li class="flex lh-title">
+              <i class="bi bi-check-circle-fill white f4"></i>
+              <span
+                >Growth Opportunities: Identification of key areas to increase
+                revenue.</span
+              >
+            </li>
+            <li class="flex lh-title">
+              <i class="bi bi-check-circle-fill white f4"></i>
+              <span
+                >Tailored Strategy: A customized plan to double your revenue in
+                six months.</span
+              >
+            </li>
+            <li class="flex lh-title">
+              <i class="bi bi-check-circle-fill white f4"></i>
+              <span
+                >Expert Guidance: Actionable advice to attract more customers
+                and enhance your online presence.</span
+              >
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="center">
-        <BookACallButton isTransparentButton/>
+        <BookACallButton isTransparentButton />
       </div>
     </div>
   </div>
+</section>

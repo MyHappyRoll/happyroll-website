@@ -11,22 +11,18 @@ import PageLayout from "../layouts/PageLayout.astro";
     gap: 30px;
   }
 
+  .design-sample:nth-child(1),
+  .design-sample:nth-child(2) {
+    flex: 1;
+  }
+
   .design-sample {
-    max-width: 353px;
     height: 350px;
   }
 
   @media screen and (min-width: 960px) {
     .hero-section {
       padding-top: 4rem;
-    }
-
-    .designs-section__container {
-      gap: 25px;
-    }
-
-    .design-sample {
-      max-width: 314px;
     }
   }
 </style>
@@ -51,14 +47,11 @@ import PageLayout from "../layouts/PageLayout.astro";
     </section>
     <section id="designs-section" class="designs-section">
       <div
-        class="designs-section__container ph3 pt5 pb6 flex flex-wrap items-center justify-center mw7 mw8-l center"
+        class="designs-section__container ph3 pt5 pb6 flex flex-wrap justify-center mw7 mw8-l center"
       >
-        <div class="design-sample w-100 w-third-l bg-neutral-800 br4"></div>
-        <div class="design-sample w-100 w-third-l bg-neutral-800 br4"></div>
-        <div class="design-sample w-100 w-third-l bg-neutral-800 br4"></div>
-        <div class="design-sample w-100 w-third-l bg-neutral-800 br4"></div>
-        <div class="design-sample w-100 w-third-l bg-neutral-800 br4"></div>
-        <div class="design-sample w-100 w-third-l bg-neutral-800 br4"></div>
+        <div class="design-sample w-100 w-50-l bg-neutral-800 br4"></div>
+        <div class="design-sample w-100 w-50-l bg-neutral-800 br4"></div>
+        <div class="design-sample w-100 bg-neutral-800 br4"></div>
       </div>
     </section>
   </main>
